@@ -1,38 +1,49 @@
 .App {
+  background-color: cadetblue;
+}
+
+.title-all {
+  display: inline-block;
   text-align: center;
+  margin: 20px calc(50% - 200px);
+  width: 400px;
+  font-size: 35px;
+  font-family: "Satisfy", cursive;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* FIRST LOOK /////////////////////////////////*/
+.first-all {
+  font-size: 20px;
+  width: 800px;
+  margin: 80px 150px;
+  font-family: "Ubuntu", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 800, "GRAD" 0, "opsz" 48;
+}
+/* SECTION 1 /////////////////////////////////*/
+
+.section-title-all {
+  text-align: center;
+  margin: 200px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.section-title-all h2 {
+  font-family: "Satisfy", cursive;
+  font-size: 35px;
+}
+
+.section-category {
+  display: inline-block;
+  background-color: rgb(17, 17, 17);
   color: white;
+  font-size: 30px;
+  margin: 0 325px;
+  padding: 50px 50px;
+  box-shadow: 10px 10px 20px black, -2px -3px 6px black;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.limit {
+  margin: 1000px 0;
 }
