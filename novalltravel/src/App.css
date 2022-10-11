@@ -39,11 +39,37 @@
   background-color: rgb(17, 17, 17);
   color: white;
   font-size: 30px;
+  font-family: "Satisfy", cursive;
   margin: 0 325px;
   padding: 50px 50px;
   box-shadow: 10px 10px 20px black, -2px -3px 6px black;
 }
 
 .limit {
-  margin: 1000px 0;
+  margin: 2000px 0;
+}
+/* SECTION 2 /////////////////////////////////*/
+.section-category.h {
+  margin: 0 calc(50% - 100px);
+}
+/* SECTION 3 /////////////////////////////////*/
+.section3-title-all {
+  text-align: left;
+  font-family: "Satisfy", cursive;
+  margin: 50px 100px;
+}
+
+.section3-text {
+  margin: 0 100px;
+}
+
+.citation {
+  margin: 80px 200px;
+}
+/* FOOTER /////////////////////////////////*/
+.credits {
+  background-color: rgb(55, 94, 95);
+  text-align: center;
+  height: 200px;
+  margin-top: 100px;
 }
