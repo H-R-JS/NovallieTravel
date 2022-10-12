@@ -4,7 +4,7 @@ import { FirstLook } from "./HeaderAll/FirstLook";
 
 export function Header() {
   return (
-    <div>
+    <div className="header-background">
       <header className="background-header">
         <Title />
         <FirstLook />
