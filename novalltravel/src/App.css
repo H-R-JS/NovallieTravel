@@ -3,7 +3,7 @@
 }
 
 .header-background {
-  margin-bottom: 200px;
+  height: 1000px;
 }
 
 .title-all {
@@ -13,6 +13,15 @@
   width: 400px;
   font-size: 35px;
   font-family: "Satisfy", cursive;
+}
+
+.img {
+  position: absolute;
+  top: 38%;
+  left: 65%;
+  width: 400px;
+  height: 500px;
+  box-shadow: 30px 40px 0px rgb(56, 92, 94), -20px -30px 0px rgb(56, 92, 94);
 }
 
 /* FIRST LOOK /////////////////////////////////*/
@@ -30,7 +39,7 @@
 
 .section1-background {
   background-color: #fff;
-  height: 1100px;
+  height: 1700px;
 }
 
 .section-title-all {
@@ -70,8 +79,8 @@
   color: white;
   font-family: "Satisfy", cursive;
   font-size: 50px;
-  left: 18%;
-  top: 159%;
+  left: 17.5%;
+  top: 150%;
   padding: 20px;
   opacity: 1;
   border: 8px solid white;
@@ -99,8 +108,8 @@
   color: white;
   font-family: "Satisfy", cursive;
   font-size: 50px;
-  left: 70%;
-  top: 159%;
+  left: 69.5%;
+  top: 150%;
   padding: 20px;
   opacity: 1;
   border: 8px solid white;
@@ -114,24 +123,118 @@
 .limit {
   margin: 2000px 0;
 }
-/* SECTION 2 /////////////////////////////////*/
+
 .section-category.h {
-  margin: 0 calc(50% - 100px);
+  float: left;
+  background: url(https://scontent-cdg2-1.xx.fbcdn.net/v/t1.15752-9/310990664_8140185182690428_4307302376859419385_n.jpg?stp=dst-jpg_p1080x2048&_nc_cat=108&ccb=1-7&_nc_sid=ae9488&_nc_ohc=O_JLDEhBH2QAX9NNz3q&_nc_ht=scontent-cdg2-1.xx&oh=03_AdS_IdF4FtNYCvL97ct4xoMnUYb908L9c5xleAghpcy9_g&oe=636EDE0E);
+  background-size: 100%;
+  height: 550px;
+  width: 500px;
+  box-shadow: 2px 3px 7px black;
+  filter: blur(2px);
+  opacity: 0.7;
+  transition: filter 0.5s, opacity 0.5s;
 }
-/* SECTION 3 /////////////////////////////////*/
+
+.section-category.h:hover {
+  filter: blur(0px);
+  opacity: 1;
+}
+
+.title-box3 {
+  position: absolute;
+  color: white;
+  font-family: "Satisfy", cursive;
+  font-size: 50px;
+  left: 20.5%;
+  top: 217%;
+  padding: 20px;
+  opacity: 1;
+  border: 8px solid white;
+}
+
+.section-category.m {
+  float: left;
+  background: url(https://scontent-cdg2-1.xx.fbcdn.net/v/t1.15752-9/310555425_573867631178281_2026588216477961394_n.jpg?stp=dst-jpg_p1080x2048&_nc_cat=104&ccb=1-7&_nc_sid=ae9488&_nc_ohc=_SDF90G_3IAAX9UJBax&_nc_ht=scontent-cdg2-1.xx&oh=03_AdQs6vrvqUFuh6yknfy9Pa_YGqXoS2cKU_lnX1dr8pSfWw&oe=636D9337);
+  background-size: 100%;
+  height: 550px;
+  width: 500px;
+  box-shadow: 2px 3px 7px black;
+  filter: blur(2px);
+  opacity: 0.7;
+  transition: filter 0.5s, opacity 0.5s;
+}
+
+.section-category.m:hover {
+  filter: blur(0px);
+  opacity: 1;
+}
+
+.title-box4 {
+  position: absolute;
+  color: white;
+  font-family: "Satisfy", cursive;
+  font-size: 50px;
+  left: 70.5%;
+  top: 217%;
+  padding: 20px;
+  opacity: 1;
+  border: 8px solid white;
+}
+
+/* SECTION 2 /////////////////////////////////*/
 .section3-title-all {
   text-align: left;
   font-family: "Satisfy", cursive;
-  margin: 50px 100px;
+  font-size: 45px;
+  margin: 50px 300px;
 }
 
 .section3-text {
-  margin: 0 100px;
+  display: inline-block;
+  font-size: 25px;
+  margin: 0 300px;
+  width: 1000px;
+}
+
+.img-me {
+  position: absolute;
+  background: url(https://scontent-cdt1-1.xx.fbcdn.net/v/t1.15752-9/310284604_3309243672728810_6839606725466225956_n.jpg?stp=dst-jpg_p1080x2048&_nc_cat=105&ccb=1-7&_nc_sid=ae9488&_nc_ohc=1jdzT36TSggAX-kY5bG&_nc_ht=scontent-cdt1-1.xx&oh=03_AdTLXeeUTXx7XijYU6BX_WJ8k3Dbofge-EcLSm2KN4AIbQ&oe=636C351D);
+  background-size: 100% 100%;
+  width: 250px;
+  height: 300px;
+  left: 72%;
+  top: 290%;
 }
 
 .citation {
-  margin: 80px 200px;
+  font-size: 20px;
+  width: 650px;
+  margin: 300px 500px;
 }
+
+.img-citation {
+  position: absolute;
+  background: url(https://scontent-cdt1-1.xx.fbcdn.net/v/t1.15752-9/310984753_8738321552859439_2898283671132037459_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=ae9488&_nc_ohc=QFaoETbgGhAAX952DCq&_nc_ht=scontent-cdt1-1.xx&oh=03_AdQJ9L2hst3qd_BgSEXvs__KVZDIzjcS60urNJfC4yStVg&oe=636F67D7);
+  background-size: 100% 100%;
+  width: 300px;
+  height: 300px;
+  left: 8%;
+  top: 332%;
+  border-radius: 50%;
+}
+
+.img-partenariat {
+  position: absolute;
+  background: url(https://scontent-cdt1-1.xx.fbcdn.net/v/t39.30808-6/301893352_194206732953329_728765887016204597_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=FoCLLZq5DwkAX_1DZTp&_nc_ht=scontent-cdt1-1.xx&oh=00_AT__JxJm7wUWscXZFcAo1Ze3tTHxm1gZO9cLK2NyWCcRrA&oe=634CFD61);
+  background-size: 100% 100%;
+  width: 300px;
+  height: 300px;
+  left: 78%;
+  top: 385%;
+  border-radius: 50%;
+}
+
 /* FOOTER /////////////////////////////////*/
 .credits {
   background-color: rgb(55, 94, 95);
