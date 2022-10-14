@@ -1,5 +1,5 @@
 .App {
-  background-color: cadetblue;
+  background: linear-gradient(270deg, rgb(95, 158, 160) 50%, rgb(56, 92, 94));
 }
 
 .header-background {
@@ -9,6 +9,7 @@
 .title-all {
   display: inline-block;
   text-align: center;
+  color: #eee;
   margin: 20px calc(50% - 200px);
   width: 400px;
   font-size: 35px;
@@ -26,6 +27,7 @@
 
 /* FIRST LOOK /////////////////////////////////*/
 .first-all {
+  color: #eee;
   font-size: 20px;
   width: 800px;
   margin: 80px 150px;
@@ -39,7 +41,7 @@
 
 .section1-background {
   background-color: #fff;
-  height: 1700px;
+  height: 1100px;
 }
 
 .section-title-all {
@@ -53,8 +55,30 @@
   font-size: 35px;
 }
 
+#arrow-left {
+  position: absolute;
+  font-size: 60px;
+  top: 160%;
+  left: 7%;
+  cursor: pointer;
+}
+
+#arrow-right {
+  position: absolute;
+  font-size: 60px;
+  top: 160%;
+  left: 90%;
+  cursor: pointer;
+}
+
+.div-all-box {
+  width: 1200px;
+  height: 200px;
+  margin-left: calc(50% - 600px);
+}
+
 .section-category {
-  margin: 50px 220px;
+  margin: 50px 50px;
 }
 
 .section-category.r {
@@ -79,7 +103,7 @@
   color: white;
   font-family: "Satisfy", cursive;
   font-size: 50px;
-  left: 17.5%;
+  left: 27%;
   top: 150%;
   padding: 20px;
   opacity: 1;
@@ -108,7 +132,7 @@
   color: white;
   font-family: "Satisfy", cursive;
   font-size: 50px;
-  left: 69.5%;
+  left: 61%;
   top: 150%;
   padding: 20px;
   opacity: 1;
@@ -146,8 +170,8 @@
   color: white;
   font-family: "Satisfy", cursive;
   font-size: 50px;
-  left: 20.5%;
-  top: 217%;
+  left: 30.5%;
+  top: 150%;
   padding: 20px;
   opacity: 1;
   border: 8px solid white;
@@ -175,8 +199,8 @@
   color: white;
   font-family: "Satisfy", cursive;
   font-size: 50px;
-  left: 70.5%;
-  top: 217%;
+  left: 62.5%;
+  top: 150%;
   padding: 20px;
   opacity: 1;
   border: 8px solid white;
@@ -204,7 +228,7 @@
   width: 250px;
   height: 300px;
   left: 72%;
-  top: 290%;
+  top: 230%;
 }
 
 .citation {
@@ -220,7 +244,7 @@
   width: 300px;
   height: 300px;
   left: 8%;
-  top: 332%;
+  top: 272%;
   border-radius: 50%;
 }
 
@@ -231,13 +255,13 @@
   width: 300px;
   height: 300px;
   left: 78%;
-  top: 385%;
+  top: 325%;
   border-radius: 50%;
 }
 
 /* FOOTER /////////////////////////////////*/
 .credits {
-  background-color: rgb(55, 94, 95);
+  background-color: rgb(38, 73, 75);
   text-align: center;
   height: 200px;
   margin-top: 100px;
