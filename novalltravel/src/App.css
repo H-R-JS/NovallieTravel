@@ -55,12 +55,22 @@
   font-size: 35px;
 }
 
+.section-title-all p {
+  font-style: italic;
+}
+
 #arrow-left {
   position: absolute;
   font-size: 60px;
   top: 160%;
   left: 7%;
   cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+#arrow-left:hover {
+  opacity: 0.6;
 }
 
 #arrow-right {
@@ -69,6 +79,12 @@
   top: 160%;
   left: 90%;
   cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+#arrow-right:hover {
+  opacity: 0.6;
 }
 
 .div-all-box {
@@ -179,8 +195,9 @@
 
 .section-category.m {
   float: left;
-  background: url(https://scontent-cdg2-1.xx.fbcdn.net/v/t1.15752-9/310555425_573867631178281_2026588216477961394_n.jpg?stp=dst-jpg_p1080x2048&_nc_cat=104&ccb=1-7&_nc_sid=ae9488&_nc_ohc=_SDF90G_3IAAX9UJBax&_nc_ht=scontent-cdg2-1.xx&oh=03_AdQs6vrvqUFuh6yknfy9Pa_YGqXoS2cKU_lnX1dr8pSfWw&oe=636D9337);
-  background-size: 100%;
+  background: url(https://scontent-cdg2-1.xx.fbcdn.net/v/t1.15752-9/311051965_412345887757400_4752296737460178953_n.jpg?stp=dst-jpg_s2048x2048&_nc_cat=100&ccb=1-7&_nc_sid=ae9488&_nc_ohc=6PbkoJ3l0rkAX_WZEk2&_nc_ht=scontent-cdg2-1.xx&oh=03_AdTW371MFMimO0mj_wyJ13_PzPkzFdJuEigoCxB8aAX66g&oe=63728FCA);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   height: 550px;
   width: 500px;
   box-shadow: 2px 3px 7px black;
@@ -209,6 +226,7 @@
 /* SECTION 2 /////////////////////////////////*/
 .section3-title-all {
   text-align: left;
+  color: #fff;
   font-family: "Satisfy", cursive;
   font-size: 45px;
   margin: 50px 300px;
@@ -216,6 +234,8 @@
 
 .section3-text {
   display: inline-block;
+  color: #fff;
+  font-family: "Ubuntu", sans-serif;
   font-size: 25px;
   margin: 0 300px;
   width: 1000px;
@@ -232,6 +252,9 @@
 }
 
 .citation {
+  color: #fff;
+  font-family: "Ubuntu", sans-serif;
+  font-style: italic;
   font-size: 20px;
   width: 650px;
   margin: 300px 500px;
