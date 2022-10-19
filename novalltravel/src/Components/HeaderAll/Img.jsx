@@ -8,27 +8,41 @@ class Image extends React.Component {
     super(props);
     this.state = {
       source: image1,
+      nameClass: "img",
     };
-    this.changeImg = this.changeImg.bind(this);
   }
 
-  changeImg() {
+  componentDidMount() {
     setInterval(() => {
-      this.setState({
-        source: image2,
-      });
-    }, 2000);
+      if (this.state.source === image1) {
+        this.setState({
+          nameClass: "blur-effect",
+        });
+        setTimeout(() => {
+          this.setState({
+            source: image2,
+            nameClass: "img",
+          });
+        }, 1000);
+      } else if (this.state.source === image2) {
+        this.setState({
+          nameClass: "blur-effect",
+        });
+        setTimeout(() => {
+          this.setState({
+            source: image1,
+            nameClass: "img",
+          });
+        }, 1000);
+      }
+    }, 5000);
   }
 
   render() {
+    const { nameClass, source } = this.state;
     return (
       <div>
-        <img
-          className="img"
-          src={this.state.source}
-          alt="Lac blaussee de suisse, avec un bateau rouge et des poissons dans le lac"
-        ></img>
-        <button onClick={this.changeImg}>Change</button>
+        <img className={nameClass} src={source}></img>
       </div>
     );
   }

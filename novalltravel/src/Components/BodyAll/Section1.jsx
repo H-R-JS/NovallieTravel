@@ -68,7 +68,7 @@ class Boxs extends React.Component {
           <p className={title2}>{text2}</p>
         </div>
         <span
-          class="material-symbols-outlined"
+          className="material-symbols-outlined"
           id="arrow-right"
           onClick={this.handleClick}
         >

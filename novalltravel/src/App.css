@@ -23,9 +23,22 @@
   width: 400px;
   height: 500px;
   box-shadow: 30px 40px 0px rgb(56, 92, 94), -20px -30px 0px rgb(56, 92, 94);
+  filter: blur(0px);
+  transition: filter 0.3s;
 }
 
-/* FIRST LOOK /////////////////////////////////*/
+.blur-effect {
+  position: absolute;
+  top: 38%;
+  left: 65%;
+  width: 400px;
+  height: 500px;
+  box-shadow: 30px 40px 0px rgb(56, 92, 94), -20px -30px 0px rgb(56, 92, 94);
+  filter: blur(3px);
+  transition: filter 1s;
+}
+
+/* FIRST LOOK ////////////////////////////////////////////////////////////////*/
 .first-all {
   color: #eee;
   font-size: 20px;
@@ -37,7 +50,7 @@
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 800, "GRAD" 0, "opsz" 48;
 }
-/* SECTION 1 /////////////////////////////////*/
+/* SECTION 1 ////////////////////////////////////////////////////////////////*/
 
 .section1-background {
   background-color: #fff;
@@ -135,7 +148,7 @@
   box-shadow: 2px 3px 7px black;
   filter: blur(2px);
   opacity: 0.7;
-  transition: filter 0.5s, opacity 0.5s;
+  transition: filter 0.5s, opacity 0.5s, transform 0.5s;
 }
 
 .section-category.v:hover {
@@ -223,7 +236,13 @@
   border: 8px solid white;
 }
 
-/* SECTION 2 /////////////////////////////////*/
+.opacity-translate-effect {
+  opacity: 0;
+  transform: translateX(300px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+/* SECTION 2 ////////////////////////////////////////////////////////////////*/
 .section3-title-all {
   text-align: left;
   color: #fff;
