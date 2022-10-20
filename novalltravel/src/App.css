@@ -236,10 +236,13 @@
   border: 8px solid white;
 }
 
-.opacity-translate-effect {
+.fade {
+  transition: opacity 0.3s, transform 0.4s;
+}
+
+.fade.out {
   opacity: 0;
-  transform: translateX(300px);
-  transition: opacity 0.5s, transform 0.5s;
+  transform: translateX(-300px);
 }
 
 /* SECTION 2 ////////////////////////////////////////////////////////////////*/
