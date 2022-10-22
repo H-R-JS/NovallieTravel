@@ -1,16 +1,23 @@
 import React, { useState } from "react";
 
-export function Boxs({ children }) {
+export function Boxs({ children, selected }) {
+  const boxst = React.Children.toArray(children).slice(0, 2);
+  console.log(boxst);
   const boxs = React.Children.toArray(children);
   console.log(boxs);
-  const [current, setCurrent] = useState(boxs[(0, 1)].key);
+  const [current1, setCurrent1] = useState(boxs[0].key);
+  //const [current2, setCurrent2] = useState(boxs[1].key);
   const newBoxs1 = boxs.map((box) => {
-    return React.cloneElement(box, { className: current.className });
+    return React.cloneElement(box, {
+      selected: box.key === current1,
+    });
   });
+  console.log(current1);
 
   function toggleBoxs() {
-    // développer un changement de boite
+    setCurrent1(boxs[(2, 3)].key);
   }
+
   return (
     <div>
       <span className={"material-symbols-outlined"} id="arrow-left">
@@ -22,13 +29,13 @@ export function Boxs({ children }) {
       <span className="material-symbols-outlined" id="arrow-right">
         arrow_circle_right
       </span>
-      <section>{newBoxs1}</section>
+      <section className="div-all-box">{newBoxs1}</section>
     </div>
   );
 }
 
-export function Box({ children }) {
-  return <div>{children}</div>;
+export function Box({ children, selected }) {
+  return <div hidden={!selected}>{children}</div>;
 }
 
 /*  const boxs1 = [
