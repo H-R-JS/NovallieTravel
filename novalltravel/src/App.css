@@ -209,7 +209,7 @@
   color: white;
   font-family: "Satisfy", cursive;
   font-size: 50px;
-  left: 30.5%;
+  left: 28%;
   top: 150%;
   padding: 20px;
   opacity: 1;
@@ -217,7 +217,7 @@
 }
 
 .section-category.m {
-  float: left;
+  float: right;
   height: 550px;
   width: 500px;
   box-shadow: 2px 3px 7px black;
@@ -236,7 +236,7 @@
   color: white;
   font-family: "Satisfy", cursive;
   font-size: 50px;
-  left: 62.5%;
+  left: 65%;
   top: 150%;
   padding: 20px;
   opacity: 1;

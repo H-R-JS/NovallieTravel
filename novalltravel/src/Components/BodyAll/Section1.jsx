@@ -36,7 +36,7 @@ export function Section1() {
       </div>
       <div>
         <TransitionBoxs visible={open}>
-          <Boxs selected="un">
+          <Boxs>
             <Box className="box1" key="un">
               <img
                 className="section-category r"
