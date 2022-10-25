@@ -101,31 +101,46 @@
 }
 
 .div-all-box {
+  background-color: green;
   width: 1200px;
   height: 600px;
   margin: 50px calc(50% - 600px);
 }
 
-/*.box1 {
+.box1 {
   float: left;
   background-color: red;
   width: 500px;
-  height: 500px;
+  height: 550px;
 }
+
 .box2 {
   float: left;
   background-color: blue;
   width: 500px;
-  height: 500px;
+  height: 550px;
+}
+
+.box3 {
+  float: left;
+  background-color: greenyellow;
+  width: 500px;
+  height: 550px;
+}
+
+.box4 {
+  float: left;
+  background-color: purple;
+  width: 500px;
+  height: 550px;
 }
 
 .section-category {
   background-color: red;
 
   margin: 50px 50px;
-}*/
-
-.section-category.r {
+}
+*/ .section-category.r {
   float: left;
   height: 550px;
   width: 500px;

@@ -1,43 +1,141 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 
-export function Boxs({ children }) {
-  const boxs1 = React.Children.toArray(children).slice(0, 2);
-  const boxs2 = React.Children.toArray(children).slice(2, 4);
-  const [currentBoxs, setCurrentBoxs] = useState(boxs1);
-  // useReducer ou utiliser previousData
+const arrayBox = [
+  {
+    className: "section-category r",
+    src: "https://scontent-sjc3-1.xx.fbcdn.net/v/t1.15752-9/310225506_469827178443732_979114172636474639_n.jpg?stp=dst-jpg_p1080x2048&_nc_cat=107&ccb=1-7&_nc_sid=ae9488&_nc_ohc=tXdpuH8XfVMAX924hFq&_nc_ht=scontent-sjc3-1.xx&oh=03_AVJnJT7oeYCdXbb0D1Tvbt3J5ZmybQ5dmMmNGegekAtUzQ&oe=636DF443",
+    alt: "",
+    title: "title-box1",
+  },
+  {
+    className: "section-category v",
+    src: "https://scontent-sjc3-1.xx.fbcdn.net/v/t1.15752-9/310081677_846801563018222_5621701595898177584_n.jpg?stp=dst-jpg_p1080x2048&_nc_cat=104&ccb=1-7&_nc_sid=ae9488&_nc_ohc=Fg9iqcnFhd4AX8xbz1G&_nc_ht=scontent-sjc3-1.xx&oh=03_AdTDdeiJjvYR8KLqsacJXUHsz1OIK_-Jx_N1bse4PtG3Rw&oe=636B754A",
+    alt: "",
+    title: "title-box2",
+  },
+  {
+    className: "section-category h",
+    src: "https://scontent-cdg2-1.xx.fbcdn.net/v/t1.15752-9/310990664_8140185182690428_4307302376859419385_n.jpg?stp=dst-jpg_p1080x2048&_nc_cat=108&ccb=1-7&_nc_sid=ae9488&_nc_ohc=O_JLDEhBH2QAX9NNz3q&_nc_ht=scontent-cdg2-1.xx&oh=03_AdS_IdF4FtNYCvL97ct4xoMnUYb908L9c5xleAghpcy9_g&oe=636EDE0E",
+    alt: "",
+    title: "title-box3",
+  },
+  {
+    className: "section-category m",
+    src: "https://scontent-cdg2-1.xx.fbcdn.net/v/t1.15752-9/311051965_412345887757400_4752296737460178953_n.jpg?stp=dst-jpg_s2048x2048&_nc_cat=100&ccb=1-7&_nc_sid=ae9488&_nc_ohc=6PbkoJ3l0rkAX_WZEk2&_nc_ht=scontent-cdg2-1.xx&oh=03_AdTW371MFMimO0mj_wyJ13_PzPkzFdJuEigoCxB8aAX66g&oe=63728FCA",
+    alt: "",
+    title: "title-box4",
+  },
+];
 
-  function toggleBoxs() {
-    setCurrentBoxs((c) => {
-      if (c === boxs1) {
-        return boxs2;
-      } else if (c === boxs2) {
-        return boxs1;
-      }
-    });
+export function CarouselBoxs({ children }) {
+  return <div className="div-all-box"></div>;
+}
+
+class Carousel extends React.Component {
+  state = {
+    currentIndex: 0,
+  };
+
+  componentDidMount() {
+    if (this.props.autoplay) {
+      //this.autPlay()
+    }
   }
-  console.log(currentBoxs);
 
-  return (
-    <div>
-      <span
-        onClick={toggleBoxs}
-        className={"material-symbols-outlined"}
-        id="arrow-left"
-      >
+  componentWillUnmount() {
+    clearInterval(this.timer);
+  }
+  /// = () => signifie que l'on créer une function directement dans la class on a donc pas besoin de la mettre dans le render comme un element car il fait parti du class
+  autoPlay = () => {
+    this.timer = setInterval(() => {
+      this.changeImagePosition(2);
+    }, this.props.delay * 1000);
+  };
+
+  conputedLeft = () => {
+    const { carouselPostWidth, carouselPostHeight, carouselPostMargin } =
+      this.props;
+    const { currentIndex } = this.state;
+    console.log("currentindex", currentIndex);
+    let leftSpan = parseInt(`${-nowIndex * parseInt(carouselPostWidth)}`); // On récupère la valeur en chiffre à travers le parseInt dans lequel on insère les variables
+    return {
+      left:
+        carouselPostWidth.toString().match(/[%vw]/) != null
+          ? `calc(${leftSpan}% - ${carouselPostMargin * 2 * currentIndex}px)`
+          : `${leftSpan - carouselPostMargin * 2 * currentIndex}px`,
+    };
+  };
+
+  changeImagePosition = (index) => {
+    const { dataArray, block } = this.props;
+    const { currentIndex } = this.state;
+    // (1 + 1 + 3) % 3
+    this.setState({
+      currentIndex:
+        (currentIndex + index + dataArray.length) % dataArray.length,
+    });
+  };
+
+  render() {
+    const {
+      dataArray,
+      carouselPostMargin,
+      carouselPostWidth,
+      carouselPostHeight,
+    } = this.props;
+    return (
+      <div className="carousel-container">
+        <div className="carousel-area">
+          <div style={this.conputedLeft()} className="carousel-posts">
+            {dataArray.map((imageUrl, index) => {
+              return (
+                <div
+                  key={imageUrl}
+                  style={{
+                    width: carouselPostWidth,
+                    height: carouselPostHeight,
+                    margin: `0px ${carouselPostMargin}px`,
+                    ...this.props.carouselPostStyle,
+                  }}
+                  className="carouselPostBox"
+                >
+                  {this.props.children(imageUrl, index)}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+/*setCurrentBoxs((c) => {
+  if (c === boxs1) {
+    return boxs2;
+  } else if (c === boxs2) {
+    return boxs1;
+  }
+
+  const initialState = { theBoxs: boxs1 };
+
+  function reducer(state, action) {
+    switch (action.type) {
+      case boxs1:
+        return { theBoxs: state.theBoxs == boxs2 };
+      case boxs1:
+        return { theBoxs: state.theBoxs == boxs1 };
+      default:
+        throw new Error();
+    }
+  }
+
+  const [state, setCurrentBoxs] = useReducer(reducer, initialState);
+
+  <span className={"material-symbols-outlined"} id="arrow-left">
         arrow_circle_left
       </span>
-      <span
-        onClick={toggleBoxs}
-        className="material-symbols-outlined"
-        id="arrow-right"
-      >
+      <span className="material-symbols-outlined" id="arrow-right">
         arrow_circle_right
       </span>
-      <section className="div-all-box">{currentBoxs}</section>
-    </div>
-  );
-}
-
-export function Box({ children }) {
-  return <div>{children}</div>;
-}
+});*/
