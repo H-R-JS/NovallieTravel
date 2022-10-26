@@ -4,31 +4,57 @@ const arrayBox = [
   {
     className: "section-category r",
     src: "https://scontent-sjc3-1.xx.fbcdn.net/v/t1.15752-9/310225506_469827178443732_979114172636474639_n.jpg?stp=dst-jpg_p1080x2048&_nc_cat=107&ccb=1-7&_nc_sid=ae9488&_nc_ohc=tXdpuH8XfVMAX924hFq&_nc_ht=scontent-sjc3-1.xx&oh=03_AVJnJT7oeYCdXbb0D1Tvbt3J5ZmybQ5dmMmNGegekAtUzQ&oe=636DF443",
-    alt: "",
     title: "title-box1",
   },
   {
     className: "section-category v",
     src: "https://scontent-sjc3-1.xx.fbcdn.net/v/t1.15752-9/310081677_846801563018222_5621701595898177584_n.jpg?stp=dst-jpg_p1080x2048&_nc_cat=104&ccb=1-7&_nc_sid=ae9488&_nc_ohc=Fg9iqcnFhd4AX8xbz1G&_nc_ht=scontent-sjc3-1.xx&oh=03_AdTDdeiJjvYR8KLqsacJXUHsz1OIK_-Jx_N1bse4PtG3Rw&oe=636B754A",
-    alt: "",
     title: "title-box2",
   },
   {
     className: "section-category h",
     src: "https://scontent-cdg2-1.xx.fbcdn.net/v/t1.15752-9/310990664_8140185182690428_4307302376859419385_n.jpg?stp=dst-jpg_p1080x2048&_nc_cat=108&ccb=1-7&_nc_sid=ae9488&_nc_ohc=O_JLDEhBH2QAX9NNz3q&_nc_ht=scontent-cdg2-1.xx&oh=03_AdS_IdF4FtNYCvL97ct4xoMnUYb908L9c5xleAghpcy9_g&oe=636EDE0E",
-    alt: "",
     title: "title-box3",
   },
   {
     className: "section-category m",
     src: "https://scontent-cdg2-1.xx.fbcdn.net/v/t1.15752-9/311051965_412345887757400_4752296737460178953_n.jpg?stp=dst-jpg_s2048x2048&_nc_cat=100&ccb=1-7&_nc_sid=ae9488&_nc_ohc=6PbkoJ3l0rkAX_WZEk2&_nc_ht=scontent-cdg2-1.xx&oh=03_AdTW371MFMimO0mj_wyJ13_PzPkzFdJuEigoCxB8aAX66g&oe=63728FCA",
-    alt: "",
     title: "title-box4",
   },
 ];
 
-export function CarouselBoxs({ children }) {
-  return <div className="div-all-box"></div>;
+export class CarouselBoxs extends React.Component {
+  renderChildrenView = (item, index) => {
+    return (
+      <div className="content-box" key={index}>
+        <div className="card-box">
+          <div
+            style={{ backgroundImage: `url(${item.src})` }}
+            className="image-style"
+          />
+          <div className="font-box">
+            <p className="title-style">{item.title}</p>
+          </div>
+        </div>
+      </div>
+    );
+  };
+  render() {
+    return (
+      <React.Fragment>
+        <Carousel
+          dataArray={arrayBox}
+          autoplay={true}
+          delay={10}
+          carouselPostWidth={"400px"}
+          carouselPostHeight={150}
+          carouselPostMargin={10}
+        >
+          {this.renderChildrenView}
+        </Carousel>
+      </React.Fragment>
+    );
+  }
 }
 
 class Carousel extends React.Component {
@@ -57,7 +83,7 @@ class Carousel extends React.Component {
       this.props;
     const { currentIndex } = this.state;
     console.log("currentindex", currentIndex);
-    let leftSpan = parseInt(`${-nowIndex * parseInt(carouselPostWidth)}`); // On récupère la valeur en chiffre à travers le parseInt dans lequel on insère les variables
+    let leftSpan = parseInt(`${-currentIndex * parseInt(carouselPostWidth)}`); // On récupère la valeur en chiffre à travers le parseInt dans lequel on insère les variables
     return {
       left:
         carouselPostWidth.toString().match(/[%vw]/) != null
@@ -105,6 +131,20 @@ class Carousel extends React.Component {
             })}
           </div>
         </div>
+        <span
+          onClick={() => this.changeImagePosition(-2)}
+          className={"material-symbols-outlined"}
+          id="arrow-left"
+        >
+          arrow_circle_left
+        </span>
+        <span
+          onClick={() => this.changeImagePosition(2)}
+          className="material-symbols-outlined"
+          id="arrow-right"
+        >
+          arrow_circle_right
+        </span>
       </div>
     );
   }
@@ -132,10 +172,6 @@ class Carousel extends React.Component {
 
   const [state, setCurrentBoxs] = useReducer(reducer, initialState);
 
-  <span className={"material-symbols-outlined"} id="arrow-left">
-        arrow_circle_left
-      </span>
-      <span className="material-symbols-outlined" id="arrow-right">
-        arrow_circle_right
-      </span>
+  
+      
 });*/
