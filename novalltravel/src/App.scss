@@ -336,7 +336,23 @@
 
 /*//////////////////////////////////////////////////////////////////////////*/
 
-/*@mixin trans($t: 0.5s, $tdelay: 0s) {
+/*
+
+
+
+
+.controlLeft {
+  left: 1rem;
+}
+.controlRight {
+  right: 1rem;
+}
+
+////// version 2
+
+*/
+
+@mixin trans($t: 0.5s, $tdelay: 0s) {
   transition: $t $tdelay;
 }
 @mixin flex_center {
@@ -349,24 +365,55 @@
   width: $w;
   height: $h;
 }
-
-html,
-body {
-  @include size(100%);
-  margin: 0;
-  overflow: hidden;
-  background-color: #1c1c1c;
-}
-#app {
-  @include size(100%);
+.all-carousel-boxs {
+  @include size(60%);
   @include flex_center;
+  margin: 0px calc(50% - 550px);
+  background-color: red;
 }
-.carouselContainer {
+
+.content-box {
+  background-color: green;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 15px;
+}
+.card-box {
+  display: flex;
+
+  .image-style {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    @include trans;
+    background-position: center, center;
+    background-size: cover;
+    margin-right: 5px;
+  }
+  .font-box {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 100px - 5px);
+  }
+  .title-style {
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: bolder;
+    white-space: pre-line;
+    letter-spacing: 1px;
+  }
+}
+
+.carousel-container {
   @include size(1000px, auto);
   display: flex;
   justify-content: center;
 }
-.carouselArea {
+
+.carousel-area {
   @include size(800px, auto);
   white-space: nowrap;
   position: relative;
@@ -377,7 +424,8 @@ body {
     transition: 0.5s;
   }
 }
-.carouselPostBox {
+
+.carousel-post-box {
   @include size(100%);
   display: inline-block;
   box-sizing: border-box;
@@ -391,8 +439,9 @@ body {
     }
   }
 }
-.controlLeft,
-.controlRight {
+
+/*#arrow-left,
+#arrow-right {
   @include size(40px);
   @include flex_center;
   @include trans;
@@ -408,47 +457,4 @@ body {
     color: #1c1c1c;
     background-color: rgba(255, 255, 255, 0.8);
   }
-}
-.controlLeft {
-  left: 1rem;
-}
-.controlRight {
-  right: 1rem;
-}
-
-////// version 2
-.contentBox {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  background-color: #fff;
-  box-sizing: border-box;
-  padding: 15px;
-}
-.cardBox {
-  display: flex;
-
-  .imageStyle {
-    width: 100px;
-    height: 100px;
-    border-radius: 5px;
-    @include trans;
-    background-position: center, center;
-    background-size: cover;
-    margin-right: 5px;
-  }
-  .fontBox {
-    display: flex;
-    flex-direction: column;
-    width: calc(100% - 100px - 5px);
-  }
-  .titleStyle {
-    font-size: 20px;
-    line-height: 20px;
-    font-weight: bolder;
-    white-space: pre-line;
-    letter-spacing: 1px;
-  }
-}
-*/
+}*/

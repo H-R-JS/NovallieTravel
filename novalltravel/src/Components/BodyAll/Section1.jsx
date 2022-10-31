@@ -10,7 +10,7 @@ export function Section1() {
         <h2>Nos Voyages</h2>
         <p>Cliquez sur la section qui vous intéresse</p>
       </div>
-      <div>
+      <div className="all-carousel-boxs">
         <CarouselBoxs />
       </div>
     </div>

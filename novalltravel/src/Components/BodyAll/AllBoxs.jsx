@@ -58,9 +58,12 @@ export class CarouselBoxs extends React.Component {
 }
 
 class Carousel extends React.Component {
-  state = {
-    currentIndex: 0,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentIndex: 0,
+    };
+  }
 
   componentDidMount() {
     if (this.props.autoplay) {
@@ -123,7 +126,7 @@ class Carousel extends React.Component {
                     margin: `0px ${carouselPostMargin}px`,
                     ...this.props.carouselPostStyle,
                   }}
-                  className="carouselPostBox"
+                  className="carousel-post-box"
                 >
                   {this.props.children(imageUrl, index)}
                 </div>
