@@ -117,9 +117,10 @@ class Carousel extends React.Component {
         <div className="carousel-area">
           <div style={this.conputedLeft()} className="carousel-posts">
             {dataArray.map((imageUrl, index) => {
+              console.log(index);
               return (
                 <div
-                  key={imageUrl}
+                  key={index}
                   style={{
                     width: carouselPostWidth,
                     height: carouselPostHeight,
