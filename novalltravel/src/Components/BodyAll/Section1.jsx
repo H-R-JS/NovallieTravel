@@ -7,7 +7,7 @@ export function Section1() {
   return (
     <div className="section1-background">
       <div className="section-title-all">
-        <h2>Nos Voyages</h2>
+        <h2>Nos Road Trip</h2>
         <p>Cliquez sur la section qui vous intéresse</p>
       </div>
       <div className="all-carousel-boxs">

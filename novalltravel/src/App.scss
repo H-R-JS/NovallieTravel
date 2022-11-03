@@ -287,12 +287,18 @@
 
 .img-me {
   position: absolute;
-  background: url(https://scontent-cdt1-1.xx.fbcdn.net/v/t1.15752-9/310284604_3309243672728810_6839606725466225956_n.jpg?stp=dst-jpg_p1080x2048&_nc_cat=105&ccb=1-7&_nc_sid=ae9488&_nc_ohc=1jdzT36TSggAX-kY5bG&_nc_ht=scontent-cdt1-1.xx&oh=03_AdTLXeeUTXx7XijYU6BX_WJ8k3Dbofge-EcLSm2KN4AIbQ&oe=636C351D);
+  background: url("./Image/Me.jpg");
   background-size: 100% 100%;
-  width: 250px;
-  height: 300px;
-  left: 72%;
-  top: 230%;
+  width: 320px;
+  height: 400px;
+  left: 74%;
+  top: 2180px;
+  border-radius: 10px;
+  transition: filter 0.2s;
+}
+
+.img-me:hover {
+  filter: blur(3px);
 }
 
 .citation {
@@ -367,58 +373,69 @@
 }
 .all-carousel-boxs {
   @include size(60%);
-  @include flex_center;
+
   margin: 0px calc(50% - 550px);
-  background-color: red;
 }
 
 .content-box {
-  background-color: green;
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
-  box-sizing: border-box;
-  padding: 15px;
-}
-.card-box {
-  display: flex;
 
-  .image-style {
-    width: 100px;
-    height: 100px;
-    border-radius: 5px;
-    @include trans;
-    background-position: center, center;
-    background-size: cover;
-    margin-right: 5px;
-  }
-  .font-box {
-    display: flex;
-    flex-direction: column;
-    width: calc(100% - 100px - 5px);
-  }
-  .title-style {
-    font-size: 20px;
-    line-height: 20px;
-    font-weight: bolder;
-    white-space: pre-line;
-    letter-spacing: 1px;
-  }
+  margin: 100px 0px;
+}
+
+.image-style {
+  width: 800px;
+  height: 550px;
+  border-radius: 5px;
+  @include trans;
+  background-position: center, center;
+  background-size: cover;
+  filter: blur(0px);
+}
+
+.image-style:hover {
+  filter: blur(3px);
+}
+
+.font-box {
+  position: absolute;
+}
+.title-style {
+  color: white;
+  font-family: "Satisfy", cursive;
+  font-size: 50px;
+  margin: 220px 120px;
+  padding: 20px;
+  opacity: 1;
+  border: 8px solid white;
+}
+
+.title-style.v {
+  margin-left: 150px;
+}
+
+.title-style.h {
+  margin-left: 180px;
+}
+
+.title-style.m {
+  margin-left: 190px;
 }
 
 .carousel-container {
-  @include size(1000px, auto);
+  @include size(1050px, 700px);
+
   display: flex;
   justify-content: center;
 }
 
 .carousel-area {
-  @include size(800px, auto);
+  @include size(1200px, auto);
   white-space: nowrap;
   position: relative;
   overflow: hidden;
-  box-sizing: border-box;
   > .carousel-posts {
     position: relative;
     transition: 0.5s;
