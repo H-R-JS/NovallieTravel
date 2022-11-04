@@ -21,7 +21,7 @@ export function Section2() {
       <div className="citation">
         <p>
           " Avec de la patience et de la perseverance, on finit par se créer une
-          voie, il suffit de continuer même si un tunnel nous y attends. "
+          voie, il suffit de continuer même si un tunnel nous y attends... "
         </p>
         <div className="img-citation"></div>
       </div>

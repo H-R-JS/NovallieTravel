@@ -24,9 +24,19 @@ const arrayBox = [
 ];
 
 export class CarouselBoxs extends React.Component {
+  /*constructor(props){
+    super(props)
+    this.state= {
+      visible: true;
+    }
+  }*/
+  changeBlur(e) {
+    console.log(e.target.classNamev);
+  }
+
   renderChildrenView = (item, index) => {
     return (
-      <div className="content-box" key={index}>
+      <div className="content-box" key={index} onMouseOver={this.changeBlur}>
         <div
           style={{ backgroundImage: `url(${item.src})` }}
           className="image-style"
@@ -47,6 +57,7 @@ export class CarouselBoxs extends React.Component {
           carouselPostWidth={"500px"}
           carouselPostHeight={300}
           carouselPostMargin={10}
+          onChange={this.changeBlur}
         >
           {this.renderChildrenView}
         </Carousel>

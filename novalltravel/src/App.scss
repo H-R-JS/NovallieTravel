@@ -57,19 +57,12 @@
   height: 1100px;
 }
 
-.section-title-all {
+.title-section1 {
+  font-family: "Satisfy", cursive;
+  font-size: 40px;
   display: inline-block;
   text-align: center;
   margin: 50px calc(50% - 200px);
-}
-
-.section-title-all h2 {
-  font-family: "Satisfy", cursive;
-  font-size: 35px;
-}
-
-.section-title-all p {
-  font-style: italic;
 }
 
 #arrow-left {
@@ -272,17 +265,20 @@
   text-align: left;
   color: #fff;
   font-family: "Satisfy", cursive;
-  font-size: 45px;
-  margin: 50px 300px;
+  font-size: 55px;
+  margin: 70px 300px;
 }
 
 .section3-text {
   display: inline-block;
   color: #fff;
-  font-family: "Ubuntu", sans-serif;
-  font-size: 25px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 27px;
   margin: 0 300px;
+  padding-bottom: 50px;
   width: 1000px;
+  border-bottom: #fff solid 7px;
+  border-radius: 4px;
 }
 
 .img-me {
@@ -298,7 +294,7 @@
 }
 
 .img-me:hover {
-  filter: blur(3px);
+  filter: blur(2px);
 }
 
 .citation {
@@ -307,29 +303,39 @@
   font-style: italic;
   font-size: 20px;
   width: 650px;
-  margin: 300px 500px;
+  margin: 300px 750px;
 }
 
 .img-citation {
   position: absolute;
-  background: url(https://scontent-cdt1-1.xx.fbcdn.net/v/t1.15752-9/310984753_8738321552859439_2898283671132037459_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=ae9488&_nc_ohc=QFaoETbgGhAAX952DCq&_nc_ht=scontent-cdt1-1.xx&oh=03_AdQJ9L2hst3qd_BgSEXvs__KVZDIzjcS60urNJfC4yStVg&oe=636F67D7);
+  background: url("./Image/Tunnel.jpg");
   background-size: 100% 100%;
   width: 300px;
   height: 300px;
-  left: 8%;
-  top: 272%;
+  left: 19%;
+  top: 280%;
   border-radius: 50%;
+  transition: filter 0.2s;
+}
+
+.img-citation:hover {
+  filter: blur(2px);
 }
 
 .img-partenariat {
   position: absolute;
-  background: url(https://scontent-cdt1-1.xx.fbcdn.net/v/t39.30808-6/301893352_194206732953329_728765887016204597_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=FoCLLZq5DwkAX_1DZTp&_nc_ht=scontent-cdt1-1.xx&oh=00_AT__JxJm7wUWscXZFcAo1Ze3tTHxm1gZO9cLK2NyWCcRrA&oe=634CFD61);
+  background: url("./Image/Truf&co.png");
   background-size: 100% 100%;
   width: 300px;
   height: 300px;
-  left: 78%;
-  top: 325%;
+  left: 75%;
+  top: 342%;
   border-radius: 50%;
+  transition: filter 0.2s;
+}
+
+.img-partenariat:hover {
+  filter: blur(2px);
 }
 
 /* FOOTER /////////////////////////////////*/
@@ -381,8 +387,8 @@
   width: 100%;
   height: 100%;
   display: flex;
-
   margin: 100px 0px;
+  cursor: pointer;
 }
 
 .image-style {
@@ -393,35 +399,42 @@
   background-position: center, center;
   background-size: cover;
   filter: blur(0px);
+  opacity: 1;
 }
 
 .image-style:hover {
-  filter: blur(3px);
+  filter: blur(2px);
+  opacity: 0.8;
 }
 
 .font-box {
   position: absolute;
+  margin: 165px 120px;
+  pointer-events: none;
 }
+
 .title-style {
+  /*background-color: brown;*/
   color: white;
   font-family: "Satisfy", cursive;
   font-size: 50px;
-  margin: 220px 120px;
+
   padding: 20px;
   opacity: 1;
   border: 8px solid white;
+  pointer-events: none;
 }
 
 .title-style.v {
-  margin-left: 150px;
+  margin-left: 30px;
 }
 
 .title-style.h {
-  margin-left: 180px;
+  margin-left: 50px;
 }
 
 .title-style.m {
-  margin-left: 190px;
+  margin-left: 55px;
 }
 
 .carousel-container {
