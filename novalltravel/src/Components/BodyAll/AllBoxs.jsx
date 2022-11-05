@@ -94,7 +94,6 @@ class Carousel extends React.Component {
     const { carouselPostWidth, carouselPostHeight, carouselPostMargin } =
       this.props;
     const { currentIndex } = this.state;
-    console.log("currentindex", currentIndex);
     let leftSpan = parseInt(`${-currentIndex * parseInt(carouselPostWidth)}`); // On récupère la valeur en chiffre à travers le parseInt dans lequel on insère les variables
     return {
       left:
