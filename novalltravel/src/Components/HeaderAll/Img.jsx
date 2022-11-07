@@ -1,18 +1,18 @@
 import React from "react";
 
 const ImgS = [
-  { src: require("../../Image/header1Img.jpg") },
-  { src: require("../../Image/header2Img.jpg") },
-  { src: require("../../Image/header3Img.jpg") },
-  { src: require("../../Image/header4Img.jpg") },
-  { src: require("../../Image/header5Img.jpg") },
-  { src: require("../../Image/header6Img.jpg") },
-  { src: require("../../Image/header7Img.jpg") },
-  { src: require("../../Image/header8Img.jpg") },
+  require("../../Image/header1Img.jpg"),
+  require("../../Image/header2Img.jpg"),
+  require("../../Image/header3Img.jpg"),
+  require("../../Image/header4Img.jpg"),
+  require("../../Image/header5Img.jpg"),
+  require("../../Image/header6Img.jpg"),
+  require("../../Image/header7Img.jpg"),
+  require("../../Image/header8Img.jpg"),
 ];
 const i = 1;
 
-class Image extends React.Component {
+export class Image extends React.Component {
   constructor(props) {
     super(props);
     const indxStart = 0;
@@ -45,9 +45,9 @@ class Image extends React.Component {
         this.setState({
           move: false,
         });
-        this.setIndex(this.getNextIndex(this.state.index));
-      }, 500);
-    }, 2000);
+        this.setIndex(this.getNextIndex(this.state.indexState));
+      }, 3000);
+    }, 4000);
   }
 
   render() {
@@ -56,19 +56,18 @@ class Image extends React.Component {
     if (this.state.move) {
     }
     return (
-      <div>
-        <img className={nameClass} src={source}></img>
+      <div className="mask">
+        <div className="imgs-wrapper">
+          <div className={`current imgs ${move}`}>
+            <img src={ImgS[indexState]} alt="" />
+          </div>
+          <div className={`next imgs ${move}`}>
+            <img src={ImgS[next]} alt="" />
+          </div>
+        </div>
       </div>
     );
   }
-}
-
-export function Img() {
-  return (
-    <div>
-      <Image />
-    </div>
-  );
 }
 
 /*Note à faire : 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Title } from "./HeaderAll/Title";
 import { FirstLook } from "./HeaderAll/FirstLook";
-import { Img } from "./HeaderAll/Img";
+import { Image } from "./HeaderAll/Img";
 
 export function Header() {
   return (
@@ -9,7 +9,7 @@ export function Header() {
       <header className="background-header">
         <Title />
         <FirstLook />
-        <Img />
+        <Image />
       </header>
     </div>
   );
