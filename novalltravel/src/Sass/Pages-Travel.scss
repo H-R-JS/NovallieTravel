@@ -1,0 +1,36 @@
+@import "./Variables";
+
+.pages-travel-background {
+  background: linear-gradient(270deg, rgb(95, 158, 160) 50%, rgb(56, 92, 94));
+  height: 1000px;
+}
+
+.title-box {
+}
+
+.h1-travel {
+  display: inline-block;
+  font-family: $fontType1;
+  margin: 20px calc(50% - 200px);
+  font-size: 60px;
+
+  color: #fff;
+}
+
+.return {
+  display: flex;
+  color: #fff;
+  width: 200px;
+  text-decoration: none;
+  font-size: 20px;
+  margin: -100px 30px;
+}
+
+.return p {
+  margin: 0 12px;
+}
+#arrow-return {
+  margin: 3px 0;
+}
+
+/* Travel-R-All*/ ///////////////////////////////////////////////////////////////

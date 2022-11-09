@@ -1,14 +1,21 @@
 import "./App.scss";
-import { Header } from "./Components/Header";
-import { Body } from "./Components/Body";
-import { Footer } from "./Components/Footer";
+import { Routes, Route } from "react-router-dom";
+import { Home } from "./Components/Home/Home";
+import { TravelRAll } from "./Components/Pages-Travel/Travel-R/Travel-R-All";
+import { TravelVAll } from "./Components/Pages-Travel/Travel-V/Travel-V-All";
+import { TravelHAll } from "./Components/Pages-Travel/Travel-H/Travel-H-All";
+import { TravelMAll } from "./Components/Pages-Travel/Travel-M/Travel-M-All";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Body />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/TravelRAll" element={<TravelRAll />} />
+        <Route path="/TravelVAll" element={<TravelVAll />} />
+        <Route path="/TravelHAll" element={<TravelHAll />} />
+        <Route path="/TravelMAll" element={<TravelMAll />} />
+      </Routes>
     </div>
   );
 }

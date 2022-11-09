@@ -1,14 +1,14 @@
 import React from "react";
 
 const ImgS = [
-  require("../../Image/header1Img.jpg"),
-  require("../../Image/header2Img.jpg"),
-  require("../../Image/header3Img.jpg"),
-  require("../../Image/header4Img.jpg"),
-  require("../../Image/header5Img.jpg"),
-  require("../../Image/header6Img.jpg"),
-  require("../../Image/header7Img.jpg"),
-  require("../../Image/header8Img.jpg"),
+  require("../../../Image/header1Img.jpg"),
+  require("../../../Image/header2Img.jpg"),
+  require("../../../Image/header3Img.jpg"),
+  require("../../../Image/header4Img.jpg"),
+  require("../../../Image/header5Img.jpg"),
+  require("../../../Image/header6Img.jpg"),
+  require("../../../Image/header7Img.jpg"),
+  require("../../../Image/header8Img.jpg"),
 ];
 const i = 1;
 

@@ -1,3 +1,6 @@
+@import "./Sass/Pages-Travel.scss";
+@import "./Sass/Variables.scss";
+
 .App {
   background: linear-gradient(270deg, rgb(95, 158, 160) 50%, rgb(56, 92, 94));
 }
@@ -13,7 +16,7 @@
   margin: 20px calc(50% - 200px);
   width: 400px;
   font-size: 35px;
-  font-family: "Satisfy", cursive;
+  font-family: $fontType1;
 }
 
 .imgs {
@@ -67,7 +70,7 @@
   font-size: 20px;
   width: 800px;
   margin: 80px 150px;
-  font-family: "Ubuntu", sans-serif;
+  font-family: $fontType2;
 }
 
 .material-symbols-outlined {
@@ -81,7 +84,7 @@
 }
 
 .title-section1 {
-  font-family: "Satisfy", cursive;
+  font-family: $fontType1;
   font-size: 40px;
   display: inline-block;
   text-align: center;
@@ -168,7 +171,7 @@
 .title-style {
   /*background-color: brown;*/
   color: white;
-  font-family: "Satisfy", cursive;
+  font-family: $fontType1;
   font-size: 50px;
 
   padding: 20px;
@@ -226,7 +229,7 @@
 .section3-title-all {
   text-align: left;
   color: #fff;
-  font-family: "Satisfy", cursive;
+  font-family: $fontType1;
   font-size: 55px;
   margin: 70px 300px;
 }
@@ -261,7 +264,7 @@
 
 .citation {
   color: #fff;
-  font-family: "Ubuntu", sans-serif;
+  font-family: $fontType2;
   font-style: italic;
   font-size: 20px;
   width: 650px;
