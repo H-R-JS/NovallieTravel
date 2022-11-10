@@ -1,5 +1,5 @@
 @import "./Sass/Pages-Travel.scss";
-@import "./Sass/Variables.scss";
+@import "./Sass/Variables&Mixins.scss";
 
 .App {
   background: linear-gradient(270deg, rgb(95, 158, 160) 50%, rgb(56, 92, 94));
@@ -121,11 +121,6 @@
 
 @mixin trans($t: 0.5s, $tdelay: 0s) {
   transition: $t $tdelay;
-}
-@mixin flex_center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 @mixin size($w, $h: $w) {

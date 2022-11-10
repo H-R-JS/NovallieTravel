@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export function TitleRT() {
   return (
-    <div className="title-box">
+    <div>
       <h1 className="h1-travel">Nos Randonnées</h1>
       <Link className="return" to="/">
         <span className="material-symbols-outlined" id="arrow-return">

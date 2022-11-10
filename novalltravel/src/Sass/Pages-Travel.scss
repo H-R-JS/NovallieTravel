@@ -1,11 +1,8 @@
-@import "./Variables";
+@import "./Variables&Mixins";
 
 .pages-travel-background {
   background: linear-gradient(270deg, rgb(95, 158, 160) 50%, rgb(56, 92, 94));
   height: 1000px;
-}
-
-.title-box {
 }
 
 .h1-travel {
@@ -13,7 +10,6 @@
   font-family: $fontType1;
   margin: 20px calc(50% - 200px);
   font-size: 60px;
-
   color: #fff;
 }
 
@@ -34,3 +30,26 @@
 }
 
 /* Travel-R-All*/ ///////////////////////////////////////////////////////////////
+
+.all-category-rt {
+  @include flex_center;
+  position: absolute;
+  /*background-color: red;*/
+  width: 600px;
+  height: 600px;
+  top: 200px;
+  left: calc(50% - 300px);
+
+  .first-category {
+    background-color: rgb(61, 98, 100);
+    padding: 0.5rem;
+    margin: 0.5rem;
+    cursor: pointer;
+
+    .content-first-category {
+      color: #fff;
+      font-family: $fontType2;
+      font-size: 30px;
+    }
+  }
+}
