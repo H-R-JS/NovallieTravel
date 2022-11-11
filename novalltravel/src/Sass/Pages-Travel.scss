@@ -43,13 +43,34 @@
   .first-category {
     background-color: rgb(61, 98, 100);
     padding: 0.5rem;
-    margin: 0.5rem;
+    margin: 1rem;
+    box-shadow: 2px 4px 5px #222;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
 
     .content-first-category {
       color: #fff;
       font-family: $fontType2;
       font-size: 30px;
+      pointer-events: none;
     }
   }
+
+  .second-category {
+    background-color: rgb(61, 98, 100);
+    box-shadow: 2px 4px 5px #222;
+    border-radius: 5px;
+    cursor: pointer;
+    /*Faire en sorte que le first cat ne bouge pas vers le haut*/
+    .content-second-category {
+      color: #fff;
+      font-family: $fontType2;
+      font-size: 20px;
+      pointer-events: none;
+    }
+  }
+}
+.first-category:hover {
+  background-color: rgb(44, 122, 126);
 }
