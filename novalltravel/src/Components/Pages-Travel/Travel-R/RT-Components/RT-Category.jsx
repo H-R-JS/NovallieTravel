@@ -1,39 +1,63 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CategoryArrayRT = [
-  { firstCat: "Pyrénées-Atlantiques", secondCat: "lac de montagnon(Aydius)" },
+  { firstCat: "Pyrénées-Atlantiques", secondCat: ["Lac de Montagnon(Aydius)"] },
   {
     firstCat: "Hautes-Pyrénées",
     secondCat: [
-      "lac des glorittes(Gavarnie-Gèdre)",
-      "cirque de Gavarnie",
-      "lac de l'oule(Aragnouet)",
-      "lac d'Estom (Cauterets)",
-      "lac de Bareille (Bourg-d'Oueil)",
+      "Lac des Glorittes(Gavarnie-Gèdre)",
+      "Cirque de Gavarnie",
+      "Lac de l'Oule(Aragnouet)",
+      "Lac d'Estom (Cauterets)",
+      "Lac de Bareille (Bourg-d'Oueil)",
     ],
   },
-  { firstCat: "Hautes-Garonne", secondCat: "lac d'Ôo (Ôo)" },
+  { firstCat: "Hautes-Garonne", secondCat: ["Lac d'Ôo (Ôo)"] },
   {
     firstCat: "Pyrénées-Orientales",
-    secondCat: "Gorge de Calamus (Saint-antoine de Galamus)",
+    secondCat: ["Gorge de Calamus (Saint-antoine de Galamus)"],
   },
 ];
 /*"Ariège" */
 
 export class CategoryRT extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      secondClass: "second-category",
+    };
+  }
+
+  toggleSecondCat = () => {
+    if (this.state.secondClass === "second-category") {
+      this.setState({ secondClass: "out" });
+    } else {
+      this.setState({ secondClass: "second-category" });
+    }
+  };
+
   renderChildrenView = (item, index) => {
     return (
-      <div key={index}>
-        <div className="first-category">
+      <div key={index} className="box-category">
+        <div className="first-category" onClick={this.toggleSecondCat}>
           <p className="content-first-category">{item.firstCat}</p>
         </div>
-        <div className="second-category">
-          <p className="content-second-category">{item.secondCat}</p>
+        <div className={this.state.secondClass}>
+          {item.secondCat.map((value, index) => {
+            return (
+              <div key={index} className="box-content-second">
+                <Link to={`/${value}`} className="link-underline">
+                  <p className="content-second-category">{value}</p>
+                </Link>
+              </div>
+            );
+          })}
         </div>
       </div>
     );
 
-    /**Mettre un index dans la seconde cat pour que les valeur du tableau soit indépendant */
+    /**Faire en sorte que les second category s'ouvre uniquement par box et non unanimement */
   };
 
   render() {

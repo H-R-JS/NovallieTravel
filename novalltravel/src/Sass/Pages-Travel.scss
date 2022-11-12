@@ -2,7 +2,7 @@
 
 .pages-travel-background {
   background: linear-gradient(270deg, rgb(95, 158, 160) 50%, rgb(56, 92, 94));
-  height: 1000px;
+  height: 1500px;
 }
 
 .h1-travel {
@@ -34,16 +34,20 @@
 .all-category-rt {
   @include flex_center;
   position: absolute;
-  /*background-color: red;*/
   width: 600px;
-  height: 600px;
-  top: 200px;
+  height: 1100px;
+  top: 100px;
   left: calc(50% - 300px);
+
+  .box-category {
+    background-color: green;
+    width: 350px;
+  }
 
   .first-category {
     background-color: rgb(61, 98, 100);
-    padding: 0.5rem;
-    margin: 1rem;
+    padding: 1rem;
+    margin: 0rem;
     box-shadow: 2px 4px 5px #222;
     border-radius: 5px;
     cursor: pointer;
@@ -58,19 +62,34 @@
   }
 
   .second-category {
-    background-color: rgb(61, 98, 100);
-    box-shadow: 2px 4px 5px #222;
-    border-radius: 5px;
-    cursor: pointer;
     /*Faire en sorte que le first cat ne bouge pas vers le haut*/
-    .content-second-category {
-      color: #fff;
-      font-family: $fontType2;
-      font-size: 20px;
-      pointer-events: none;
+    .box-content-second {
+      background-color: rgb(61, 98, 100);
+      box-shadow: 2px 4px 5px #222;
+      padding: 0px 0.5rem;
+      margin: 0.1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      .content-second-category {
+        color: #fff;
+        font-family: $fontType2;
+        font-size: 20px;
+
+        pointer-events: none;
+      }
     }
   }
 }
 .first-category:hover {
   background-color: rgb(44, 122, 126);
+}
+
+.out {
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+}
+
+.link-underline {
+  text-decoration: none;
 }
