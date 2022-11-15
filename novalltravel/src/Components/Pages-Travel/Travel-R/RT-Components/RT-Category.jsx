@@ -1,8 +1,13 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const firstArrayRT = [
-  { firstCat: "Pyrénées-Atlantiques", secondCat: ["Lac de Montagnon(Aydius)"] },
+  {
+    firstCat: "Pyrénées-Atlantiques",
+    secondCat: ["Lac de Montagnon(Aydius)"],
+    id: "0",
+  },
   {
     firstCat: "Hautes-Pyrénées",
     secondCat: [
@@ -12,11 +17,13 @@ const firstArrayRT = [
       "Lac d'Estom (Cauterets)",
       "Lac de Bareille (Bourg-d'Oueil)",
     ],
+    id: "1",
   },
-  { firstCat: "Hautes-Garonne", secondCat: ["Lac d'Ôo (Ôo)"] },
+  { firstCat: "Hautes-Garonne", secondCat: ["Lac d'Ôo (Ôo)"], id: "2" },
   {
     firstCat: "Pyrénées-Orientales",
     secondCat: ["Gorge de Calamus (Saint-antoine de Galamus)"],
+    id: "3",
   },
 ];
 /*"Ariège" */
@@ -24,28 +31,56 @@ const firstArrayRT = [
 const secondCat = document.querySelector(".second-category");
 /*const boxCat = secondCat.parentNode;*/
 
+function Fade({ visible, children, id }) {
+  let className = "fade";
+  if (!visible) {
+    className += " out";
+  }
+  return <div className={className}>{children}</div>;
+}
+
 export class CategoryRT extends React.Component {
-  /* toggleSecondCat = () => {
-    boxCat.classList.add("out");
-  };*/
+  constructor(props) {
+    super(props);
+    this.state = {
+      array: firstArrayRT,
+      open: true,
+    };
+  }
+
+  toggle = () => {
+    this.setState({ open: false });
+  };
 
   firstRenderChildrenView = (item, index) => {
     return (
       <div key={index} className="box-category">
-        <div className="first-category" /*onClick={this.toggleSecondCat}*/>
+        <div className="first-category" onClick={this.updateRow}>
           <p className="content-first-category">{item.firstCat}</p>
         </div>
-        <div className="second-category">
-          <p className="content-second-category">{item.secondCat}</p>
+        <div className="second-category" key={index}>
+          <Fade visible={this.state.open}>
+            <p className="content-second-category">{item.secondCat}</p>
+          </Fade>
         </div>
       </div>
     );
   };
-  /**Mettre un autre composant gérant l'animation */
+
+  updateRow = () => {
+    const box = document.querySelector(".box-category");
+    const keyIdx = box.getAttribute("key");
+    console.log(JSON.stringify(box));
+    let CfirstArrayRT = [...firstArrayRT];
+    CfirstArrayRT[keyIdx].secondCat.splice(0, 1);
+
+    this.setState({ array: CfirstArrayRT });
+  };
+  /**Mettre les fichier en acync et trouver comment récupérer la key attribut du box category pour l'animation */
   render() {
     return (
       <div className="all-category-rt">
-        <FirstCategoryRT dataArray={firstArrayRT}>
+        <FirstCategoryRT dataArray={this.state.array}>
           {this.firstRenderChildrenView}
         </FirstCategoryRT>
       </div>

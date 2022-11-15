@@ -84,7 +84,15 @@
   background-color: rgb(44, 122, 126);
 }
 
-.out {
+.fade {
+  transition: opacity 0.3s;
+}
+
+.fade.out {
+  opacity: 0;
+}
+
+.wout {
   width: 0px;
   height: 0px;
   opacity: 0;
@@ -92,4 +100,10 @@
 
 .link-underline {
   text-decoration: none;
+}
+
+.lol {
+  background-color: red;
+  width: 500px;
+  height: 500px;
 }
