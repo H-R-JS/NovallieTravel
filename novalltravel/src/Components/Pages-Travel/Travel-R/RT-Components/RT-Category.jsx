@@ -31,7 +31,7 @@ const firstArrayRT = [
 const secondCat = document.querySelector(".second-category");
 /*const boxCat = secondCat.parentNode;*/
 
-function Fade({ visible, children, id }) {
+function Fade({ visible, children }) {
   let className = "fade";
   if (!visible) {
     className += " out";
@@ -45,6 +45,7 @@ export class CategoryRT extends React.Component {
     this.state = {
       array: firstArrayRT,
       open: true,
+      secondClass: "second-category",
     };
   }
 
@@ -52,31 +53,46 @@ export class CategoryRT extends React.Component {
     this.setState({ open: false });
   };
 
+  updateRow = (e) => {
+    e.preventDefault();
+    const key = e.target.dataset.value;
+    const categoryTwo = e.target.nextSibling.className;
+    console.log(categoryTwo);
+    let CfirstArrayRT = [...firstArrayRT];
+    CfirstArrayRT[key].secondCat.splice(0, 5);
+
+    this.setState({ array: CfirstArrayRT });
+    console.log(CfirstArrayRT);
+  };
+  /**How change attribut in react on array map ou combiner fade and dataset value */
+
   firstRenderChildrenView = (item, index) => {
     return (
       <div key={index} className="box-category">
-        <div className="first-category" onClick={this.updateRow}>
+        <div
+          className="first-category"
+          data-value={index}
+          onClick={this.updateRow}
+        >
           <p className="content-first-category">{item.firstCat}</p>
         </div>
-        <div className="second-category" key={index}>
+        <div className="second-category" key={index} data-value={index}>
           <Fade visible={this.state.open}>
-            <p className="content-second-category">{item.secondCat}</p>
+            <div>
+              {item.secondCat.map((value, index) => {
+                return (
+                  <p key={index} className="content-second-category">
+                    {value}
+                  </p>
+                );
+              })}
+            </div>
           </Fade>
         </div>
       </div>
     );
   };
 
-  updateRow = () => {
-    const box = document.querySelector(".box-category");
-    const keyIdx = box.getAttribute("key");
-    console.log(JSON.stringify(box));
-    let CfirstArrayRT = [...firstArrayRT];
-    CfirstArrayRT[keyIdx].secondCat.splice(0, 1);
-
-    this.setState({ array: CfirstArrayRT });
-  };
-  /**Mettre les fichier en acync et trouver comment récupérer la key attribut du box category pour l'animation */
   render() {
     return (
       <div className="all-category-rt">
