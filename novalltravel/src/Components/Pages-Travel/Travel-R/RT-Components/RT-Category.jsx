@@ -53,16 +53,17 @@ export class CategoryRT extends React.Component {
     this.setState({ open: false });
   };
 
-  updateRow = (e) => {
+  toggleSecondCat = (e) => {
     e.preventDefault();
+    const sCat = document.querySelectorAll(".second-category");
     const key = e.target.dataset.value;
-    const categoryTwo = e.target.nextSibling.className;
-    console.log(categoryTwo);
-    let CfirstArrayRT = [...firstArrayRT];
+    /*const categoryTwo = e.target.nextSibling.className;*/
+    /*let CfirstArrayRT = [...firstArrayRT];
     CfirstArrayRT[key].secondCat.splice(0, 5);
-
     this.setState({ array: CfirstArrayRT });
-    console.log(CfirstArrayRT);
+    console.log(CfirstArrayRT);*/
+    sCat[key].classList.add("wout");
+    console.log(sCat[key]);
   };
   /**How change attribut in react on array map ou combiner fade and dataset value */
 
@@ -72,13 +73,13 @@ export class CategoryRT extends React.Component {
         <div
           className="first-category"
           data-value={index}
-          onClick={this.updateRow}
+          onClick={this.toggleSecondCat}
         >
           <p className="content-first-category">{item.firstCat}</p>
         </div>
         <div className="second-category" key={index} data-value={index}>
           <Fade visible={this.state.open}>
-            <div>
+            <div className="box-content-second">
               {item.secondCat.map((value, index) => {
                 return (
                   <p key={index} className="content-second-category">
