@@ -31,13 +31,28 @@ const firstArrayRT = [
 const secondCat = document.querySelector(".second-category");
 /*const boxCat = secondCat.parentNode;*/
 
-function Fade({ visible, children }) {
+/*function Fade({ visible, children }) {
+  const [showChildren, setShowChildren] = useState(visible);
+
+  useEffect(() => {
+    if (visible) {
+      setShowChildren(true);
+    } else {
+      const timer = setTimeout(() => {
+        setShowChildren(false);
+      }, 300);
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+  }, [visible]);
+
   let className = "fade";
   if (!visible) {
     className += " out";
   }
-  return <div className={className}>{children}</div>;
-}
+  return <div>{showChildren && children}</div>;
+}*/
 
 export class CategoryRT extends React.Component {
   constructor(props) {
@@ -49,20 +64,20 @@ export class CategoryRT extends React.Component {
     };
   }
 
-  toggle = () => {
-    this.setState({ open: false });
-  };
-
   toggleSecondCat = (e) => {
     e.preventDefault();
     const sCat = document.querySelectorAll(".second-category");
     const key = e.target.dataset.value;
-    /*const categoryTwo = e.target.nextSibling.className;*/
-    /*let CfirstArrayRT = [...firstArrayRT];
-    CfirstArrayRT[key].secondCat.splice(0, 5);
-    this.setState({ array: CfirstArrayRT });
-    console.log(CfirstArrayRT);*/
-    sCat[key].classList.add("wout");
+    if (!sCat[key].classList.contains("wout")) {
+      sCat[key].style.opacity = "0";
+      setTimeout(() => {
+        sCat[key].classList.add("wout");
+      }, 320);
+    } else {
+      sCat[key].classList.remove("wout");
+      sCat[key].style.opacity = "1";
+    }
+
     console.log(sCat[key]);
   };
   /**How change attribut in react on array map ou combiner fade and dataset value */
@@ -77,18 +92,16 @@ export class CategoryRT extends React.Component {
         >
           <p className="content-first-category">{item.firstCat}</p>
         </div>
-        <div className="second-category" key={index} data-value={index}>
-          <Fade visible={this.state.open}>
-            <div className="box-content-second">
-              {item.secondCat.map((value, index) => {
-                return (
-                  <p key={index} className="content-second-category">
-                    {value}
-                  </p>
-                );
-              })}
-            </div>
-          </Fade>
+        <div className="second-category wout" key={index} data-value={index}>
+          <div className="box-content-second">
+            {item.secondCat.map((value, index) => {
+              return (
+                <p key={index} className="content-second-category">
+                  {value}
+                </p>
+              );
+            })}
+          </div>
         </div>
       </div>
     );
