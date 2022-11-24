@@ -69,35 +69,3 @@ export class Image extends React.Component {
     );
   }
 }
-
-/*Note à faire : 
-- Créer une fonction qui s'auto lance, et qui fait tourner les images du header
-
-
-
-setInterval(() => {
-      if (this.state.source === image1) {
-        this.setState({
-          nameClass: "blur-effect",
-        });
-        setTimeout(() => {
-          this.setState({
-            source: image2,
-            nameClass: "img",
-          });
-        }, 1000);
-      } else if (this.state.source === image2) {
-        this.setState({
-          nameClass: "blur-effect",
-        });
-        setTimeout(() => {
-          this.setState({
-            source: image1,
-            nameClass: "img",
-          });
-        }, 1000);
-      }
-    }, 5000);
-
-
-*/

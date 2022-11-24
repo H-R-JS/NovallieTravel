@@ -1,58 +1,41 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const firstArrayRT = [
   {
     firstCat: "Pyrénées-Atlantiques",
     secondCat: ["Lac de Montagnon(Aydius)"],
-    id: "0",
+    link: ["/TravelRAll/LacMontagnon"],
   },
   {
     firstCat: "Hautes-Pyrénées",
     secondCat: [
-      "Lac des Glorittes(Gavarnie-Gèdre)",
+      "Lac des Gloriettes(Gavarnie-Gèdre)",
       "Cirque de Gavarnie",
       "Lac de l'Oule(Aragnouet)",
       "Lac d'Estom (Cauterets)",
       "Lac de Bareille (Bourg-d'Oueil)",
     ],
-    id: "1",
+    link: [
+      "/LacGloriettes",
+      "/CirqGavarnie",
+      "/LacOule",
+      "/LacEstom",
+      "/LacBareille",
+    ],
   },
-  { firstCat: "Hautes-Garonne", secondCat: ["Lac d'Ôo (Ôo)"], id: "2" },
+  {
+    firstCat: "Hautes-Garonne",
+    secondCat: ["Lac d'Ôo (Ôo)"],
+    link: ["/LacÔo"],
+  },
   {
     firstCat: "Pyrénées-Orientales",
     secondCat: ["Gorge de Calamus (Saint-antoine de Galamus)"],
-    id: "3",
+    link: ["/GorgCalamus"],
   },
 ];
 /*"Ariège" */
-
-const secondCat = document.querySelector(".second-category");
-/*const boxCat = secondCat.parentNode;*/
-
-/*function Fade({ visible, children }) {
-  const [showChildren, setShowChildren] = useState(visible);
-
-  useEffect(() => {
-    if (visible) {
-      setShowChildren(true);
-    } else {
-      const timer = setTimeout(() => {
-        setShowChildren(false);
-      }, 300);
-      return () => {
-        clearTimeout(timer);
-      };
-    }
-  }, [visible]);
-
-  let className = "fade";
-  if (!visible) {
-    className += " out";
-  }
-  return <div>{showChildren && children}</div>;
-}*/
 
 export class CategoryRT extends React.Component {
   constructor(props) {
@@ -60,7 +43,6 @@ export class CategoryRT extends React.Component {
     this.state = {
       array: firstArrayRT,
       open: true,
-      secondClass: "second-category",
     };
   }
 
@@ -94,13 +76,21 @@ export class CategoryRT extends React.Component {
         </div>
         <div className="second-category wout" key={index} data-value={index}>
           <div className="box-content-second">
-            {item.secondCat.map((value, index) => {
-              return (
-                <p key={index} className="content-second-category">
-                  {value}
-                </p>
-              );
-            })}
+            <Link
+              to={item.link.map((l) => {
+                console.log(Link.to);
+                return l;
+              })}
+              key={index}
+            >
+              {item.secondCat.map((value, index) => {
+                return (
+                  <p key={index} className="content-second-category">
+                    {value}
+                  </p>
+                );
+              })}
+            </Link>
           </div>
         </div>
       </div>
@@ -130,51 +120,3 @@ class FirstCategoryRT extends React.Component {
     );
   }
 }
-/*
-
-<SecondCategoryRT dataArray={secondArrayRT}>
-            {this.secondRenderChildrenView}
-          </SecondCategoryRT>
-
-          
-const secondArrayRT = [
-  { secondCat: ["Lac de Montagnon(Aydius)"] },
-  {
-    secondCat: [
-      "Lac des Glorittes(Gavarnie-Gèdre)",
-      "Cirque de Gavarnie",
-      "Lac de l'Oule(Aragnouet)",
-      "Lac d'Estom (Cauterets)",
-      "Lac de Bareille (Bourg-d'Oueil)",
-    ],
-  },
-  { secondCat: ["Lac d'Ôo (Ôo)"] },
-  { secondCat: ["Gorge de Calamus (Saint-antoine de Galamus)"] },
-];
-
-secondRenderChildrenView = (item, index) => {
-    return (
-      <div key={index}>
-        <div className="second-category" /*onClick={this.toggleSecondCat}>
-          <div className="content-second-category">
-            {item.secondCat.map((value, index) => {
-              return <p key={index}>{value}</p>;
-            })}
-          </div>
-        </div>
-      </div>
-    );
-  };
-
-class SecondCategoryRT extends React.Component {
-  render() {
-    const { dataArray } = this.props;
-    return (
-      <div>
-        {dataArray[0].map((catego, index) => {
-          return <div key={index}>{this.props.children(catego, index)}</div>;
-        })}
-      </div>
-    );
-  }
-}*/
