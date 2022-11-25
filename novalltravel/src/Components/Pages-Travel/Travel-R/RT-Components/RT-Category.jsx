@@ -4,35 +4,30 @@ import { Link } from "react-router-dom";
 const firstArrayRT = [
   {
     firstCat: "Pyrénées-Atlantiques",
-    secondCat: ["Lac de Montagnon(Aydius)"],
-    link: ["/TravelRAll/LacMontagnon"],
+    secondCat: [{ secC: "Lac de Montagnon(Aydius)", link: "/LacMontagnon" }],
   },
   {
     firstCat: "Hautes-Pyrénées",
     secondCat: [
-      "Lac des Gloriettes(Gavarnie-Gèdre)",
-      "Cirque de Gavarnie",
-      "Lac de l'Oule(Aragnouet)",
-      "Lac d'Estom (Cauterets)",
-      "Lac de Bareille (Bourg-d'Oueil)",
-    ],
-    link: [
-      "/LacGloriettes",
-      "/CirqGavarnie",
-      "/LacOule",
-      "/LacEstom",
-      "/LacBareille",
+      { secC: "Lac des Gloriettes(Gavarnie-Gèdre)", link: "/LacGloriettes" },
+      { secC: "Cirque de Gavarnie", link: "/CirqGavarnie" },
+      { secC: "Lac de l'Oule(Aragnouet)", link: "/LacOule" },
+      { secC: "Lac d'Estom (Cauterets)", link: "/LacEstom" },
+      { secC: "Lac de Bareille (Bourg-d'Oueil)", link: "/LacBareille" },
     ],
   },
   {
     firstCat: "Hautes-Garonne",
-    secondCat: ["Lac d'Ôo (Ôo)"],
-    link: ["/LacÔo"],
+    secondCat: [{ secC: "Lac d'Ôo (Ôo)", link: "/LacÔo" }],
   },
   {
     firstCat: "Pyrénées-Orientales",
-    secondCat: ["Gorge de Calamus (Saint-antoine de Galamus)"],
-    link: ["/GorgCalamus"],
+    secondCat: [
+      {
+        secC: "Gorge de Galamus (Saint-antoine de Galamus)",
+        link: "/GorgeGalamus",
+      },
+    ],
   },
 ];
 /*"Ariège" */
@@ -59,8 +54,6 @@ export class CategoryRT extends React.Component {
       sCat[key].classList.remove("wout");
       sCat[key].style.opacity = "1";
     }
-
-    console.log(sCat[key]);
   };
   /**How change attribut in react on array map ou combiner fade and dataset value */
 
@@ -76,21 +69,15 @@ export class CategoryRT extends React.Component {
         </div>
         <div className="second-category wout" key={index} data-value={index}>
           <div className="box-content-second">
-            <Link
-              to={item.link.map((l) => {
-                console.log(Link.to);
-                return l;
-              })}
-              key={index}
-            >
-              {item.secondCat.map((value, index) => {
-                return (
+            {item.secondCat.map((value, index) => {
+              return (
+                <Link to={value.link}>
                   <p key={index} className="content-second-category">
-                    {value}
+                    {value.secC}
                   </p>
-                );
-              })}
-            </Link>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>
