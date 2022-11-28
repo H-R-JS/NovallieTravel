@@ -5,3 +5,10 @@ $fontType2: "Ubuntu", sans-serif;
   display: flex;
   justify-content: center;
 }
+
+@mixin flex-center2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

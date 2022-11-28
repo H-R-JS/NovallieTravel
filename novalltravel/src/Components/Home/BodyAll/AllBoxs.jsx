@@ -168,29 +168,3 @@ class Carousel extends React.Component {
     );
   }
 }
-
-/*setCurrentBoxs((c) => {
-  if (c === boxs1) {
-    return boxs2;
-  } else if (c === boxs2) {
-    return boxs1;
-  }
-
-  const initialState = { theBoxs: boxs1 };
-
-  function reducer(state, action) {
-    switch (action.type) {
-      case boxs1:
-        return { theBoxs: state.theBoxs == boxs2 };
-      case boxs1:
-        return { theBoxs: state.theBoxs == boxs1 };
-      default:
-        throw new Error();
-    }
-  }
-
-  const [state, setCurrentBoxs] = useReducer(reducer, initialState);
-
-  
-      
-});*/
