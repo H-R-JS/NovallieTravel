@@ -4,7 +4,8 @@ const arrayPage1 = [
   {
     title: "Lac de Montagnon",
     img: require("../Img-Pages/montagnonImg1.jpg"),
-    text: "sfsfdsfsdfdfsfsfsdfsdfsdfsdfsdfsfsfefsfsdfsdfsf",
+
+    text: "Je suis entrain d'écrire ce texte n'en prenez pas compte svp ça risque d'être gênant",
   },
 ];
 
@@ -15,7 +16,9 @@ export class LacMontagnon extends React.Component {
         <h1 className="title-page">{item.title}</h1>
         <div className="article-page">
           <img className="image-page" src={item.img} />
-          <p className="text-page">{item.text}</p>
+          <div className="text-page">
+            <p>{item.text}</p>
+          </div>
         </div>
       </div>
     );

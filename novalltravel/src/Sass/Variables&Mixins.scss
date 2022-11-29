@@ -3,7 +3,7 @@ $fontType2: "Ubuntu", sans-serif;
 
 @mixin flex_center {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 @mixin flex-center2 {
