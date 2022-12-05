@@ -6,6 +6,7 @@ import { TravelVAll } from "./Components/Pages-Travel/Travel-V/Travel-V-All";
 import { TravelHAll } from "./Components/Pages-Travel/Travel-H/Travel-H-All";
 import { TravelMAll } from "./Components/Pages-Travel/Travel-M/Travel-M-All";
 import { LacMontagnon } from "./Components/Pages-Travel/Travel-R/Pages-RT";
+import { LacdÔo } from "./Components/Pages-Travel/Travel-R/Pages-RT";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/TravelHAll" element={<TravelHAll />} />
         <Route path="/TravelMAll" element={<TravelMAll />} />
         <Route path="/LacMontagnon" element={<LacMontagnon />} />
+        <Route path="/LacÔo" element={<LacdÔo />} />
       </Routes>
     </div>
   );
