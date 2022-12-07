@@ -24,6 +24,42 @@ const arrayPageLdÔ = [
   },
 ];
 
+const arrayPageGC = [
+  {
+    title: "Gorge de Galamus",
+    img: require("../Img-Pages/montagnonImg1.jpg"),
+
+    text1:
+      " Les Gorges de Galamus avec plus de 500 mètres de profondeur creusé par les eaux de l'Agly, est un site naturel classé et protégé. Simple et pour toute la famille, on peut passer les gorges par la terre ou par l'eau en faisant du canyoning pour les amateurs et les débutants. ",
+    text2:
+      " Les Gorges de Galamus possède l'ermitage troglodyte de Saint-Antoine de Galamus directement sur la paroi, ce qui est plutôt original .",
+  },
+];
+
+const arrayPageLG = [
+  {
+    title: "Lac des Gloriettes",
+    img: require("../Img-Pages/lacglori1.jpg"),
+
+    text1:
+      " Le Lac le plus facile d'accès, car il se situe à quelques mètres du parking. Une randonné au chemin vraiment simple et très agréable. À plus de 1668m, il possède un barrage par lequel la randonné commence pour un tour du lac très agréable.  ",
+    text2:
+      "  Il suffit de seulement 1h ou maximum 2h si on prend vraiment son temps, pour faire le tour du lac même si ce n'est pas la seul randonné possible car l'on rejoindre le cirque d'Estaubé en suivant le balisage, une randonné bien plus longue. Mais le tour du lac suffira à vous offrir de beaux panoramas à partager avec la famille, les amis ou vos animaux de compagnies !",
+  },
+];
+
+const arrayPageCG = [
+  {
+    title: "Cirque de Gavarnie",
+    img: require("../Img-Pages/cirqgavarnie1.jpg"),
+
+    text1:
+      " Le Cirque de Gavarnie est l'un des plus beau Parc National des Pyrénées, accueillant bon nombre de touriste chaque année. Avec ses murs de calcaires et ses sommets à 3000m d'altitude, le cirque à de quoi impressionner, en rajoutent l'incroyable cascade de 423 mètres qui est l'une des plus hautes d'europe. ",
+    text2:
+      " La randonnée dans son ensemble est assez plate et très simple d'accès pour tout types de randonneur, parcourant des bois et des prairies en longeant une rivière bien agréable. On a pu avoir la chance de le faire avec de la neige tout le long, cela créer un paysage différent et bien plus hivernal, la magie du cirque de Gavarnie reste pourtant bien présente.",
+  },
+];
+
 export class LacMontagnon extends React.Component {
   renderChildren = (item, index) => {
     return (
@@ -71,6 +107,81 @@ export class LacdÔo extends React.Component {
         <RenderPages dataArray={arrayPageLdÔ}>
           {this.renderChildren}
         </RenderPages>
+      </div>
+    );
+  }
+}
+
+export class GorGalamus extends React.Component {
+  renderChildren = (item, index) => {
+    return (
+      <div key={index} className="content-page">
+        <h1 className="title-page">{item.title}</h1>
+        <div className="article-page">
+          <img className="image-page" src={item.img} />
+          <div className="text-page">
+            <p>{item.text1}</p>
+            <p>{item.text2}</p>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  render() {
+    return (
+      <div className="all-page">
+        <RenderPages dataArray={arrayPageGC}>{this.renderChildren}</RenderPages>
+      </div>
+    );
+  }
+}
+
+export class LacGloriette extends React.Component {
+  renderChildren = (item, index) => {
+    return (
+      <div key={index} className="content-page">
+        <h1 className="title-page">{item.title}</h1>
+        <div className="article-page">
+          <img className="image-page" src={item.img} />
+          <div className="text-page">
+            <p>{item.text1}</p>
+            <p>{item.text2}</p>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  render() {
+    return (
+      <div className="all-page">
+        <RenderPages dataArray={arrayPageLG}>{this.renderChildren}</RenderPages>
+      </div>
+    );
+  }
+}
+
+export class CirGavanie extends React.Component {
+  renderChildren = (item, index) => {
+    return (
+      <div key={index} className="content-page">
+        <h1 className="title-page">{item.title}</h1>
+        <div className="article-page">
+          <img className="image-page" src={item.img} />
+          <div className="text-page">
+            <p>{item.text1}</p>
+            <p>{item.text2}</p>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  render() {
+    return (
+      <div className="all-page">
+        <RenderPages dataArray={arrayPageCG}>{this.renderChildren}</RenderPages>
       </div>
     );
   }
