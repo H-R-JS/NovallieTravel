@@ -60,6 +60,42 @@ const arrayPageCG = [
   },
 ];
 
+const arrayPageLO = [
+  {
+    title: "Lac de l'Oule",
+    img: require("../Img-Pages/cirqgavarnie1.jpg"),
+
+    text1:
+      " Le lac de l'Oule est à plus de 1819 m et 50ha situé dans la réserve de Néouvielle, un grand bassin retenu par un épais barrage avec un refuge juste avant. En prenant le temps de faire le tour du lac, de l'autre bout du lac donne accès à d'autre randonné plus ardu. ",
+    text2:
+      " La randonné est assez facile, accessible à tout le monde et agréable tout du long. Il faut s'arrêter au parking de l'Artiguss qui est payant le 15 juin au 15 septembre, un départ sans embûche suivit d'une montée plutôt douce à travers la forêt.",
+  },
+];
+
+const arrayPageLE = [
+  {
+    title: "Lac d'Estom",
+    img: require("../Img-Pages/cirqgavarnie1.jpg"),
+
+    text1:
+      " Une randonné un peu plus difficile que la majorité des lacs sur ce site, le lac d'Estom à 1804 m avc un dénivelé de plus de 450 m, une très bonne randonnée dans son ensemble avec un environnement varié et parsemé de petits beaux endroits.",
+    text2:
+      " Le départ se trouve vers la fruitière, le chemin à l'extrémité du parking et suivre les panneaux. Le chemin sera accompagné d'une rivière fort sympathique parsemé de pin ici et là, la randonné et très agréable et divertissante.  ",
+  },
+];
+
+const arrayPageLB = [
+  {
+    title: "Cirque de Gavarnie",
+    img: require("../Img-Pages/cirqgavarnie1.jpg"),
+
+    text1:
+      " Le Cirque de Gavarnie est l'un des plus beau Parc National des Pyrénées, accueillant bon nombre de touriste chaque année. Avec ses murs de calcaires et ses sommets à 3000m d'altitude, le cirque à de quoi impressionner, en rajoutent l'incroyable cascade de 423 mètres qui est l'une des plus hautes d'europe. ",
+    text2:
+      " La randonnée dans son ensemble est assez plate et très simple d'accès pour tout types de randonneur, parcourant des bois et des prairies en longeant une rivière bien agréable. On a pu avoir la chance de le faire avec de la neige tout le long, cela créer un paysage différent et bien plus hivernal, la magie du cirque de Gavarnie reste pourtant bien présente.",
+  },
+];
+
 export class LacMontagnon extends React.Component {
   renderChildren = (item, index) => {
     return (
@@ -182,6 +218,81 @@ export class CirGavanie extends React.Component {
     return (
       <div className="all-page">
         <RenderPages dataArray={arrayPageCG}>{this.renderChildren}</RenderPages>
+      </div>
+    );
+  }
+}
+
+export class LaclOule extends React.Component {
+  renderChildren = (item, index) => {
+    return (
+      <div key={index} className="content-page">
+        <h1 className="title-page">{item.title}</h1>
+        <div className="article-page">
+          <img className="image-page" src={item.img} />
+          <div className="text-page">
+            <p>{item.text1}</p>
+            <p>{item.text2}</p>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  render() {
+    return (
+      <div className="all-page">
+        <RenderPages dataArray={arrayPageLO}>{this.renderChildren}</RenderPages>
+      </div>
+    );
+  }
+}
+
+export class LacEstom extends React.Component {
+  renderChildren = (item, index) => {
+    return (
+      <div key={index} className="content-page">
+        <h1 className="title-page">{item.title}</h1>
+        <div className="article-page">
+          <img className="image-page" src={item.img} />
+          <div className="text-page">
+            <p>{item.text1}</p>
+            <p>{item.text2}</p>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  render() {
+    return (
+      <div className="all-page">
+        <RenderPages dataArray={arrayPageLE}>{this.renderChildren}</RenderPages>
+      </div>
+    );
+  }
+}
+
+export class LacBareille extends React.Component {
+  renderChildren = (item, index) => {
+    return (
+      <div key={index} className="content-page">
+        <h1 className="title-page">{item.title}</h1>
+        <div className="article-page">
+          <img className="image-page" src={item.img} />
+          <div className="text-page">
+            <p>{item.text1}</p>
+            <p>{item.text2}</p>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  render() {
+    return (
+      <div className="all-page">
+        <RenderPages dataArray={arrayPageLB}>{this.renderChildren}</RenderPages>
       </div>
     );
   }

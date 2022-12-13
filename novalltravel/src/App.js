@@ -11,6 +11,9 @@ import {
   LacdÔo,
   LacGloriette,
   CirGavanie,
+  LaclOule,
+  LacEstom,
+  LacBareille,
 } from "./Components/Pages-Travel/Travel-R/Pages-RT";
 
 function App() {
@@ -27,6 +30,9 @@ function App() {
         <Route path="/GorgeGalamus" element={<GorGalamus />} />
         <Route path="/LacGloriettes" element={<LacGloriette />} />
         <Route path="/CirqGavarnie" element={<CirGavanie />} />
+        <Route path="/LacOule" element={<LaclOule />} />
+        <Route path="/LacEstom" element={<LacEstom />} />
+        <Route path="/LacBareille" element={<LacBareille />} />
       </Routes>
     </div>
   );
