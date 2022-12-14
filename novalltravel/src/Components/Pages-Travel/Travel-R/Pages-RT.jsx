@@ -84,18 +84,6 @@ const arrayPageLE = [
   },
 ];
 
-const arrayPageLB = [
-  {
-    title: "Cirque de Gavarnie",
-    img: require("../Img-Pages/cirqgavarnie1.jpg"),
-
-    text1:
-      " Le Cirque de Gavarnie est l'un des plus beau Parc National des Pyrénées, accueillant bon nombre de touriste chaque année. Avec ses murs de calcaires et ses sommets à 3000m d'altitude, le cirque à de quoi impressionner, en rajoutent l'incroyable cascade de 423 mètres qui est l'une des plus hautes d'europe. ",
-    text2:
-      " La randonnée dans son ensemble est assez plate et très simple d'accès pour tout types de randonneur, parcourant des bois et des prairies en longeant une rivière bien agréable. On a pu avoir la chance de le faire avec de la neige tout le long, cela créer un paysage différent et bien plus hivernal, la magie du cirque de Gavarnie reste pourtant bien présente.",
-  },
-];
-
 export class LacMontagnon extends React.Component {
   renderChildren = (item, index) => {
     return (
@@ -268,31 +256,6 @@ export class LacEstom extends React.Component {
     return (
       <div className="all-page">
         <RenderPages dataArray={arrayPageLE}>{this.renderChildren}</RenderPages>
-      </div>
-    );
-  }
-}
-
-export class LacBareille extends React.Component {
-  renderChildren = (item, index) => {
-    return (
-      <div key={index} className="content-page">
-        <h1 className="title-page">{item.title}</h1>
-        <div className="article-page">
-          <img className="image-page" src={item.img} />
-          <div className="text-page">
-            <p>{item.text1}</p>
-            <p>{item.text2}</p>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
-  render() {
-    return (
-      <div className="all-page">
-        <RenderPages dataArray={arrayPageLB}>{this.renderChildren}</RenderPages>
       </div>
     );
   }

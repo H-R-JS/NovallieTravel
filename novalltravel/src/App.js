@@ -13,8 +13,12 @@ import {
   CirGavanie,
   LaclOule,
   LacEstom,
-  LacBareille,
 } from "./Components/Pages-Travel/Travel-R/Pages-RT";
+import {
+  Oeschinensee,
+  Aareschlucht,
+  Klausenpass,
+} from "./Components/Pages-Travel/Travel-V/Pages-VT";
 
 function App() {
   return (
@@ -32,7 +36,9 @@ function App() {
         <Route path="/CirqGavarnie" element={<CirGavanie />} />
         <Route path="/LacOule" element={<LaclOule />} />
         <Route path="/LacEstom" element={<LacEstom />} />
-        <Route path="/LacBareille" element={<LacBareille />} />
+        <Route path="/Oeschinensee" element={<Oeschinensee />} />
+        <Route path="/Aareschlucht" element={<Aareschlucht />} />
+        <Route path="/Klausenpass" element={<Klausenpass />} />
       </Routes>
     </div>
   );

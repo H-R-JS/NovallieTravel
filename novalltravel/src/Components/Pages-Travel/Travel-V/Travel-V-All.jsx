@@ -1,9 +1,12 @@
 import React from "react";
+import { TitleVT } from "./VT-Components/VT-Title";
+import { CategoryVT } from "./VT-Components/VT-Category";
 
 export function TravelVAll() {
   return (
-    <div>
-      <h1>HELLO V</h1>
+    <div className="pages-travel-background">
+      <TitleVT />
+      <CategoryVT />
     </div>
   );
 }

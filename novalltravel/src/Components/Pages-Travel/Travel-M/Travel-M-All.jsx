@@ -1,9 +1,12 @@
 import React from "react";
+import { TitleMT } from "./MT-Components/MT-Title";
+import { CategoryMT } from "./MT-Components/MT-Category";
 
 export function TravelMAll() {
   return (
-    <div>
-      <h1>HELLO M</h1>
+    <div className="pages-travel-background">
+      <TitleMT />
+      <CategoryMT />
     </div>
   );
 }

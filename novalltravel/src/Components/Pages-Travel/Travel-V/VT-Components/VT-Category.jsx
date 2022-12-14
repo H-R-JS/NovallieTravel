@@ -1,41 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const firstArrayRT = [
+const firstArrayVT = [
   {
-    firstCat: "Pyrénées-Atlantiques",
-    secondCat: [{ secC: "Lac de Montagnon(Aydius)", link: "/LacMontagnon" }],
-  },
-  {
-    firstCat: "Hautes-Pyrénées",
-    secondCat: [
-      { secC: "Lac des Gloriettes(Gavarnie-Gèdre)", link: "/LacGloriettes" },
-      { secC: "Cirque de Gavarnie", link: "/CirqGavarnie" },
-      { secC: "Lac de l'Oule(Aragnouet)", link: "/LacOule" },
-      { secC: "Lac d'Estom (Cauterets)", link: "/LacEstom" },
-    ],
-  },
-  {
-    firstCat: "Hautes-Garonne",
-    secondCat: [{ secC: "Lac d'Ôo (Ôo)", link: "/LacÔo" }],
-  },
-  {
-    firstCat: "Pyrénées-Orientales",
+    firstCat: "Suisse",
     secondCat: [
       {
-        secC: "Gorge de Galamus (Saint-antoine de Galamus)",
-        link: "/GorgeGalamus",
+        secC: "Oeschinensee",
+        link: "/Oeschinensee",
+      },
+      {
+        secC: " Aareschlucht",
+        link: "/Aareschlucht",
+      },
+      {
+        secC: "Klausenpass",
+        link: "/Klausenpass",
       },
     ],
   },
 ];
-/*"Ariège" */
+/**HOTEL TOURIST */
 
-export class CategoryRT extends React.Component {
+export class CategoryVT extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      array: firstArrayRT,
+      array: firstArrayVT,
       open: true,
     };
   }
@@ -86,15 +77,15 @@ export class CategoryRT extends React.Component {
   render() {
     return (
       <div className="all-category-rt">
-        <FirstCategoryRT dataArray={this.state.array}>
+        <FirstCategoryVT dataArray={this.state.array}>
           {this.firstRenderChildrenView}
-        </FirstCategoryRT>
+        </FirstCategoryVT>
       </div>
     );
   }
 }
 
-class FirstCategoryRT extends React.Component {
+class FirstCategoryVT extends React.Component {
   render() {
     const { dataArray } = this.props;
     return (
