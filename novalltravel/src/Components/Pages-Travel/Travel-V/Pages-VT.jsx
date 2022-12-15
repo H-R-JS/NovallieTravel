@@ -3,7 +3,7 @@ import React from "react";
 const arrayPageSO = [
   {
     title: "Oeschinensee",
-    img: require("../Img-Pages/montagnonImg1.jpg"),
+    img: require("../Img-Pages/Oesch1.jpg"),
 
     text1:
       "L'un des lacs les plus magnifique de Suisse, une eau presque totalement bleu dominé par plusieurs pics formant un paysage impressionnant. Il est possible d'y accéder avec un Téléphérique mais aussi à pied, avec un parking au niveau de la sation du Téléphérique et quelques dizaine de mètres avant. ",
@@ -14,25 +14,25 @@ const arrayPageSO = [
 
 const arrayPageSA = [
   {
-    title: "Aareschlucht",
+    title: "Les gorges de l'Aar",
     img: require("../Img-Pages/montagnonImg1.jpg"),
 
     text1:
-      "Le lac de Montagnon porte la particularité d'être en forme de coeur, ce qui le rend assez touristique. À quelques centaines de mètres du pic de Mardas (2188m) et de Montagnon d'Iseye (2173m), la lac étant à 2003m d'altitude la randonné est plutôt difficile avec plus de 1200m de dénivelé sur 12km de marche, la montée demandera entre 3 à 3h30 et la descente de 2h à 2h30, la randonnée pouvant durée de 5h à 6h l'équipement en eau ( surtout en été ) et nourriture n'est pas à négligé.",
+      " Les gorges de l'Aar est un sentier directement dans les gorges avec la rivière de l'Aare qui passe juste en dessous, un paysage particulier et moment rafraîchissant en été. Une balade agréable et trés accessible avec au bout un restaurant si vous partez d'Aareschlucht, vous y achetez des souvenirs comme simplement y manger.",
     text2:
-      "Le départ ce fera sur une aire de stationnement sur le Col de Lasserre à 5km d'Aydus, le début du chemin est parsemé d'arbres suivant un sentier dans les bois, vient ensuite des étendues de collines à gravir avec un beau panorama à l'arrière en s'éloignant des bois. Vous y croiserez des vaches et de chevaux, et avec plus d'attention des marmottes cachées entre les rochers.Vous finirez par passer une cabane par sa gauche avec un abreuvoir, et en continuant viendra la phase la plus difficile de la randonnée, une grande montée assez raide emplit de rochers et pierrailles, mais passer ce moment avec quelques effort de plus, la récompense finit par nous sourir. Un panorama des plus magnifiques des Pyrénées-Atlantiques, avec une vu assez large sur une partie des pyrénées avec bien évidement le lac en forme de coeur. Pour avoir une meilleur vue et se rendre compte de sa forme, il est possible de faire de la montée supplémentaire pour voir le lac dans son ensemble.",
+      " Le départ se peut se faire à deux endroit différent, soit à Aareschlucht soit à son restaurant, pour une balade d'environ 45 mn ou 1h pour un prix de 10 CHF pour les adultes, 6.50 CHF pour les enfants de 6 à 16ans et gratuit pour les moins de 6 ans, ouvert entre 8h30 à 17h30.",
   },
 ];
 
 const arrayPageSK = [
   {
-    title: "Klausenpass",
-    img: require("../Img-Pages/montagnonImg1.jpg"),
+    title: "Lac de Klausenpass",
+    img: require("../Img-Pages/klausen1.jpg"),
 
     text1:
-      "Le lac de Montagnon porte la particularité d'être en forme de coeur, ce qui le rend assez touristique. À quelques centaines de mètres du pic de Mardas (2188m) et de Montagnon d'Iseye (2173m), la lac étant à 2003m d'altitude la randonné est plutôt difficile avec plus de 1200m de dénivelé sur 12km de marche, la montée demandera entre 3 à 3h30 et la descente de 2h à 2h30, la randonnée pouvant durée de 5h à 6h l'équipement en eau ( surtout en été ) et nourriture n'est pas à négligé.",
+      "Le lac de Klausenpass possède l'un des dernier glacier de suisse, à plus de 2098 m le glacier fond petit à petit dans ce lac entouré de gravats. Toute la randonnée, donnera sur un imense paysage d'une chaîne de montagne pendant toute la durée de la marche.",
     text2:
-      "Le départ ce fera sur une aire de stationnement sur le Col de Lasserre à 5km d'Aydus, le début du chemin est parsemé d'arbres suivant un sentier dans les bois, vient ensuite des étendues de collines à gravir avec un beau panorama à l'arrière en s'éloignant des bois. Vous y croiserez des vaches et de chevaux, et avec plus d'attention des marmottes cachées entre les rochers.Vous finirez par passer une cabane par sa gauche avec un abreuvoir, et en continuant viendra la phase la plus difficile de la randonnée, une grande montée assez raide emplit de rochers et pierrailles, mais passer ce moment avec quelques effort de plus, la récompense finit par nous sourir. Un panorama des plus magnifiques des Pyrénées-Atlantiques, avec une vu assez large sur une partie des pyrénées avec bien évidement le lac en forme de coeur. Pour avoir une meilleur vue et se rendre compte de sa forme, il est possible de faire de la montée supplémentaire pour voir le lac dans son ensemble.",
+      " En partant de Klausenpass avec 5,3 km de marche et un dénivelé positif de 294 m, la randonnée est plus au moins facile et surtout trés agréable, passant par un chemin de caillout à un chemin de terre avec des vaches ici et là, jusqu'à se retrouver sur un environnement emplit de pierraille dominer par le pic d'une montagne plutôt colossale.",
   },
 ];
 

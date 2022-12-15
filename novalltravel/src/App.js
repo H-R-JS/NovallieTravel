@@ -19,6 +19,10 @@ import {
   Aareschlucht,
   Klausenpass,
 } from "./Components/Pages-Travel/Travel-V/Pages-VT";
+import {
+  HotelTourist,
+  Zenitude,
+} from "./Components/Pages-Travel/Travel-H/Pages-HT";
 
 function App() {
   return (
@@ -39,6 +43,8 @@ function App() {
         <Route path="/Oeschinensee" element={<Oeschinensee />} />
         <Route path="/Aareschlucht" element={<Aareschlucht />} />
         <Route path="/Klausenpass" element={<Klausenpass />} />
+        <Route path="/hoZenitude" element={<Zenitude />} />
+        <Route path="/hoTourist" element={<HotelTourist />} />
       </Routes>
     </div>
   );

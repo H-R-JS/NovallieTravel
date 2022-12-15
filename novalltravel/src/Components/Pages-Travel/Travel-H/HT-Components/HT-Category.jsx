@@ -4,14 +4,24 @@ import { Link } from "react-router-dom";
 const firstArrayHT = [
   {
     firstCat: "France",
-    secondCat: [{ secC: "Zenitude Hôtel-Résidences", link: "/hoZenitude" }],
+    secondCat: [
+      {
+        secC: "Zenitude Hôtel-Residences",
+        link: "/hoZenitude",
+      },
+    ],
   },
   {
     firstCat: "Suisse",
-    secondCat: [{ secC: "Hôtel Tourist", link: "/hoTourist" }],
+    secondCat: [
+      {
+        secC: "Hôtel Tourist",
+        link: "/hoTourist",
+      },
+    ],
   },
 ];
-/*"Ariège" */
+/**HOTEL TOURIST */
 
 export class CategoryHT extends React.Component {
   constructor(props) {

@@ -10,11 +10,11 @@ const firstArrayVT = [
         link: "/Oeschinensee",
       },
       {
-        secC: " Aareschlucht",
+        secC: "Gorge de l'Aar",
         link: "/Aareschlucht",
       },
       {
-        secC: "Klausenpass",
+        secC: "Lac de Klausenpass",
         link: "/Klausenpass",
       },
     ],
