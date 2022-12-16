@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ScrollOnTop } from "../../../ScrollOnTop";
 
 const firstArrayRT = [
   {
@@ -70,7 +71,7 @@ export class CategoryRT extends React.Component {
           <div className="box-content-second">
             {item.secondCat.map((value, index) => {
               return (
-                <Link to={value.link}>
+                <Link to={value.link} class="link-underline">
                   <p key={index} className="content-second-category">
                     {value.secC}
                   </p>
@@ -86,6 +87,7 @@ export class CategoryRT extends React.Component {
   render() {
     return (
       <div className="all-category-rt">
+        <ScrollOnTop />
         <FirstCategoryRT dataArray={this.state.array}>
           {this.firstRenderChildrenView}
         </FirstCategoryRT>

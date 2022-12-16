@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ScrollOnTop } from "../../../ScrollOnTop";
 
 const firstArrayMT = [
   {
@@ -7,16 +8,7 @@ const firstArrayMT = [
     secondCat: [
       {
         secC: "Dune du Pilat",
-        link: "/DunPilat",
-      },
-    ],
-  },
-  {
-    firstCat: "Côté Méditerranée",
-    secondCat: [
-      {
-        secC: "Port-la-Nouvelle",
-        link: "/PorNouvelle",
+        link: "/dunPilat",
       },
     ],
   },
@@ -62,7 +54,7 @@ export class CategoryMT extends React.Component {
           <div className="box-content-second">
             {item.secondCat.map((value, index) => {
               return (
-                <Link to={value.link}>
+                <Link to={value.link} class="link-underline">
                   <p key={index} className="content-second-category">
                     {value.secC}
                   </p>
@@ -78,6 +70,7 @@ export class CategoryMT extends React.Component {
   render() {
     return (
       <div className="all-category-rt">
+        <ScrollOnTop />
         <FirstCategoryMT dataArray={this.state.array}>
           {this.firstRenderChildrenView}
         </FirstCategoryMT>

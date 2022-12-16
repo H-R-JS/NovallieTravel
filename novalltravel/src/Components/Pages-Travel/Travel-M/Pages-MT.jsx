@@ -1,20 +1,20 @@
 import React from "react";
 
-const arrayPageHZ = [
+const arrayPageMDP = [
   {
-    title: "Zenitude",
+    title: "Dune de Pilat",
     img: require("../Img-Pages/hoZen1.jpg"),
 
     text1:
-      " Une chambre d'hôtel agréable avec des aspects luxueux, nous avons prit une chambre en noir et blanc donnant une salle de bains noir et très intimiste. ",
+      " La plus grande dune de France, situé pas loin du bassin d'arcachon, la dune du pilat est un site classé, d'une altitude de plus de 100 m de sable empilé donnant une vue splendide à son sommet. ",
     text2:
-      " Une chambre propre, avec un petit balcon. L'acceuil agréable et prêt à aider en cas de problème.",
+      " Plusieurs endroits donne accès à la dune, soit la manière officielle où vous paierez votre place de parking en fonction du temps de stationnement, avec des petits magasins de souvenirs, de glace ou de quoi se nourrir, en sachant qu'un escalier vous aide à monter à son sommet. Soit en passant directement à travers la nature, en montant directement sur le sable ce qui est plus pénible et nécessite plus d'effort physique à cause du sable, de plus cela dépend de la pente que vous escaladez. Peu importe votre manière d'arrivez au sommet, il est conseillé de s'y rendre lors du couché de soleil, donnant un sublime spectacle. ",
   },
 ];
 
-const arrayPageHHT = [
+/*const arrayPageMPN = [
   {
-    title: "Hôtel Tourist",
+    title: "Port-La-Nouvelle",
     img: require("../Img-Pages/montagnonImg1.jpg"),
 
     text1:
@@ -22,9 +22,9 @@ const arrayPageHHT = [
     text2:
       " Nous avons prit une chambre pour 2 avec des lits séparé, avec une vu sur les montagnes en fond. La chambre était propre, le seul hic et la douche et les toilettes communautaire. Un acceuil chaleureux, parlant allemand, français et anglais.",
   },
-];
+];*/
 
-export class Zenitude extends React.Component {
+export class DunePilat extends React.Component {
   renderChildren = (item, index) => {
     return (
       <div key={index} className="content-page">
@@ -43,32 +43,7 @@ export class Zenitude extends React.Component {
   render() {
     return (
       <div className="all-page">
-        <RenderPages dataArray={arrayPageHZ}>{this.renderChildren}</RenderPages>
-      </div>
-    );
-  }
-}
-
-export class HotelTourist extends React.Component {
-  renderChildren = (item, index) => {
-    return (
-      <div key={index} className="content-page">
-        <h1 className="title-page">{item.title}</h1>
-        <div className="article-page">
-          <img className="image-page" src={item.img} />
-          <div className="text-page">
-            <p>{item.text1}</p>
-            <p>{item.text2}</p>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
-  render() {
-    return (
-      <div className="all-page">
-        <RenderPages dataArray={arrayPageHHT}>
+        <RenderPages dataArray={arrayPageMDP}>
           {this.renderChildren}
         </RenderPages>
       </div>

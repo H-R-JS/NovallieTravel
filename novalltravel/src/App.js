@@ -23,6 +23,7 @@ import {
   HotelTourist,
   Zenitude,
 } from "./Components/Pages-Travel/Travel-H/Pages-HT";
+import { DunePilat } from "./Components/Pages-Travel/Travel-M/Pages-MT";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
         <Route path="/Klausenpass" element={<Klausenpass />} />
         <Route path="/hoZenitude" element={<Zenitude />} />
         <Route path="/hoTourist" element={<HotelTourist />} />
+        <Route path="/dunPilat" element={<DunePilat />} />
       </Routes>
     </div>
   );
