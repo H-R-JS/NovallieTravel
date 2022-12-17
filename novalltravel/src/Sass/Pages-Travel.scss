@@ -5,21 +5,29 @@
   height: 1200px;
 }
 
+.all-title {
+  height: 200px;
+}
+
 .h1-travel {
   display: inline-block;
   font-family: $fontType1;
-  margin: 20px calc(50% - 200px);
+  text-align: center;
+  width: 400px;
+  margin: 20px calc(50% - 190px);
   font-size: 60px;
   color: #fff;
 }
 
 .return {
   display: flex;
+  position: absolute;
   color: #fff;
   width: 200px;
   text-decoration: none;
   font-size: 20px;
-  margin: -100px 30px;
+  top: 50px;
+  left: 30px;
 }
 
 .return p {
@@ -36,7 +44,7 @@
   position: absolute;
   width: 600px;
   height: 900px;
-  top: 150px;
+  top: 200px;
   left: calc(50% - 300px);
 
   .box-category {
@@ -138,4 +146,22 @@
   font-family: $fontType2;
   font-size: 19px;
   width: 500px;
+}
+
+@media screen and (max-width: 600px) {
+  .return {
+    font-size: 16px;
+    top: 10px;
+    left: 10px;
+  }
+
+  .return p {
+    margin: 3px 12px;
+  }
+
+  /*//////////////////////////////////////////////////////////////////////////////////*/
+
+  .article-page {
+    @include flex_center2;
+  }
 }

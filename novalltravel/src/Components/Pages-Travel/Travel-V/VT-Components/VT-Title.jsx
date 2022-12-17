@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export function TitleVT() {
   return (
-    <div>
+    <div className="all-title">
       <h1 className="h1-travel">Nos Voyages</h1>
       <Link className="return" to="/">
         <span className="material-symbols-outlined" id="arrow-return">
