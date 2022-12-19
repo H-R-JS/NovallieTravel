@@ -130,14 +130,11 @@
   height: $h;
 }
 .all-carousel-boxs {
-  @include size(60%);
-
   margin: 0px calc(50% - 550px);
 }
 
 .content-box {
   width: 100%;
-  height: 100%;
   display: flex;
   margin: 100px 0px;
   cursor: pointer;
@@ -170,7 +167,6 @@
   color: white;
   font-family: $fontType1;
   font-size: 50px;
-
   padding: 20px;
   opacity: 1;
   border: 8px solid white;
@@ -189,36 +185,27 @@
   margin-left: 55px;
 }
 
-.carousel-container {
-  @include size(1050px, 700px);
-
-  display: flex;
-  justify-content: center;
-}
-
-.carousel-area {
-  @include size(1200px, auto);
-  white-space: nowrap;
-  position: relative;
-  overflow: hidden;
-  > .carousel-posts {
-    position: relative;
-    transition: 0.5s;
+@media screen and (min-width: 1051px) {
+  .carousel-container {
+    @include size(1050px, 700px);
+    display: flex;
+    justify-content: center;
   }
-}
 
-.carousel-post-box {
-  @include size(100%);
-  display: inline-block;
-  box-sizing: border-box;
-  > .cover {
-    @include size(100%);
-    @include trans;
-    background-position: center, center;
-    background-size: cover;
-    &:hover {
-      transform: scale(1.1);
+  .carousel-area {
+    @include size(1200px, auto);
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    > .carousel-posts {
+      position: relative;
+      transition: 0.5s;
     }
+  }
+
+  .carousel-post-box {
+    display: inline-block;
+    box-sizing: border-box;
   }
 }
 
@@ -353,6 +340,54 @@
 }
 
 @media screen and (max-width: 1050px) {
+  #arrow-right {
+    top: 2350px;
+    left: 90%;
+  }
+
+  #arrow-left {
+    top: 2350px;
+    left: 3%;
+  }
+
+  .image-style {
+    width: 400px;
+    height: 550px;
+    border-radius: 5px;
+    @include trans;
+    margin: 0px 50px;
+    background-position: center, center;
+    background-size: cover;
+    filter: blur(0px);
+    opacity: 1;
+  }
+
+  .carousel-container {
+    @include size(1050px, 2000px);
+    margin: 0px 40px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .carousel-area {
+    @include size(525px, auto);
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    > .carousel-posts {
+      position: relative;
+      transition: 0.5s;
+    }
+  }
+
+  .carousel-post-box {
+    display: inline-block;
+    box-sizing: border-box;
+  }
+
+  /*/////////////////////////////////////////////////////////////////////////*/
+
   .header-background {
     height: 1700px;
   }
@@ -432,3 +467,28 @@
     top: 4000px;
   }
 }
+/**
+.carousel-container {
+  @include size(1050px, 2000px);
+  background-color: red;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-area {
+  background-color: green;
+  @include size(1200px, auto);
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  > .carousel-posts {
+    position: relative;
+    transition: 0.5s;
+  }
+}
+
+.carousel-post-box {
+  background-color: blue;
+  display: inline-block;
+  box-sizing: border-box;
+}*/

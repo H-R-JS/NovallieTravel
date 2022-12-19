@@ -28,6 +28,8 @@ const arrayBox = [
   },
 ];
 
+const media600 = window.matchMedia("(max-width: 1050px)");
+
 export class CarouselBoxs extends React.Component {
   /*constructor(props){
     super(props)
@@ -62,7 +64,7 @@ export class CarouselBoxs extends React.Component {
           autoplay={true}
           delay={10}
           carouselPostWidth={"500px"}
-          carouselPostHeight={300}
+          carouselPostHeight={200}
           carouselPostMargin={10}
           onChange={this.changeBlur}
         >
@@ -93,7 +95,7 @@ class Carousel extends React.Component {
   /// = () => signifie que l'on créer une function directement dans la class on a donc pas besoin de la mettre dans le render comme un element car il fait parti du class
   autoPlay = () => {
     this.timer = setInterval(() => {
-      this.changeImagePosition(2);
+      this.changeImagePosition(this.mediaReturnNum);
     }, this.props.delay * 1000);
   };
 
@@ -110,7 +112,15 @@ class Carousel extends React.Component {
     };
   };
 
-  textStyle = {};
+  mediaReturnNum = () => {
+    if (media600.matches) {
+      console.log(1);
+      return 1;
+    } else {
+      console.log(2);
+      return 2;
+    }
+  };
 
   changeImagePosition = (index) => {
     const { dataArray, block } = this.props;
@@ -151,14 +161,14 @@ class Carousel extends React.Component {
           </div>
         </div>
         <span
-          onClick={() => this.changeImagePosition(-2)}
+          onClick={() => this.changeImagePosition(this.mediaReturnNum())}
           className={"material-symbols-outlined"}
           id="arrow-left"
         >
           arrow_circle_left
         </span>
         <span
-          onClick={() => this.changeImagePosition(2)}
+          onClick={() => this.changeImagePosition(this.mediaReturnNum())}
           className="material-symbols-outlined"
           id="arrow-right"
         >
